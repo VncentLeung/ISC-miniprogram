@@ -1,0 +1,36 @@
+<!--pages/myhistory/myhistory.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view style="margin-top:10px; padding:10px; background:#eeeeee;" wx:for="{{list}}" wx:key="key">
+    <view>
+      <text style="font-size: 14px;"> 提交日期： {{item.date}}</text>
+    </view>
+    <view>
+      <text style="font-size: 14px;"> 姓名： {{item.name}}</text>
+    </view>
+    <view>
+      <text style="font-size: 14px;"> 出/入校： {{item.inorout}}</text>
+    </view>
+    <view>
+      <text style="font-size: 14px;"> 去向： {{item.destination}}</text>
+    </view>
+    <view>
+      <text style="font-size: 14px;"> 出/入时间： {{item.inorouttime}}</text>
+    </view>
+    <view>
+      <text style="font-size: 14px;"> 原因： {{item.reason}}</text>
+    </view>
+    <view>
+      <text style="font-size: 14px;"> 核酸报告： {{item.nar}}</text>
+    </view>
+    <view>
+      <text style="font-size: 14px;"> 健康码截图： {{item.healthcode}}</text>
+    </view>
+    <view>
+      <text style="font-size: 14px;"> 审核结果： {{item.result}}</text>
+    </view>
+    </view>
+
+  </view>
+</view>
+

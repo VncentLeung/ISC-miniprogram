@@ -1,0 +1,29 @@
+<!--pages/my/my.wxml-->
+<view class="banner" >
+    <view class="topContainer">
+        <view catchtap="showBcgImgArea">
+            <image class="userinfo-avatar" mode="aspectFill" src="{{photo}}"></image>
+        </view>
+    </view>
+    <view class="container-items">
+      <view class='item' bindtap='myBag'>
+        <text class="it" space="emsp">姓名:    {{name}}</text>
+      </view>
+      <view class='item' bindtap='myBag'>
+        <text class="it" space="emsp">性别:    {{sex}}</text>
+      </view>
+      <view class='item' bindtap='myNews'>
+        <text class="it" space="emsp">学号:    {{xuehao}}</text>
+      </view>
+      <view class='item' bindtap='myRule'>
+        <text class="it" space="emsp">身份证号:  {{idcard}}</text>
+      </view>
+      <view class='item' bindtap='myRoute'>
+        <text class="it" space="emsp">学院:    {{xueyuan}}</text>
+      </view>
+      <text class="logout" bindtap="logout">退出登录</text>
+    </view>
+    <view class="usermotto">
+      <text class="yu"> </text>
+    </view>
+</view>

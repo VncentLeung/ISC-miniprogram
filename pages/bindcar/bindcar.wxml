@@ -1,0 +1,24 @@
+<!--pages/bindcar/bindcar.wxml-->
+<view class='page'>
+    <text class="cartext">绑定车辆信息</text>
+    <form bindsubmit='formSubmit'>
+      <view class='weui-cells'>
+        <view class='weui-cell weui-cell_input weui-cell_vcode'>
+          <view class='weui-cell__hd'>
+            <view class='weui-label'>车牌号</view>
+          </view>
+          <view class='weui-cell__bd'>
+            <input class='weui-input' type='number' name='carid' placeholder='请输入车牌号' bindinput='inputCarid'/>
+          </view>
+        </view>
+      </view>
+
+      <view class="two">
+        <button class='weui-btn' type='primary' formType='submit'>提交</button>
+      </view>
+      <view class="banner" bindtap="updateBindcar" >
+        <text>修改</text>
+      </view>
+    </form>
+
+</view>
