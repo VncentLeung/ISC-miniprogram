@@ -8,18 +8,19 @@
     <view class="container-items">
       <view class='item' bindtap='myBag'>
         <text class="it" space="emsp">姓名:    {{name}}</text>
+      </view> 
+      <view class='item' bindtap='myNews'>
+        <text class="it" space="emsp">学号:    {{learnToWorkId}}</text>
       </view>
       <view class='item' bindtap='myBag'>
-        <text class="it" space="emsp">性别:    {{sex}}</text>
+        <text class="it" space="emsp">状态:    {{state}}</text>
       </view>
-      <view class='item' bindtap='myNews'>
-        <text class="it" space="emsp">学号:    {{xuehao}}</text>
-      </view>
+     
       <view class='item' bindtap='myRule'>
-        <text class="it" space="emsp">身份证号:  {{idcard}}</text>
+        <text class="it" space="emsp">身份证号:  {{idCard}}</text>
       </view>
       <view class='item' bindtap='myRoute'>
-        <text class="it" space="emsp">学院:    {{xueyuan}}</text>
+        <text class="it" space="emsp">学院:    {{departId}}</text>
       </view>
       <text class="logout" bindtap="logout">退出登录</text>
     </view>

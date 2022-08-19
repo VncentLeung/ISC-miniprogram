@@ -1,5 +1,6 @@
 {
   "pages": [
+  
     "pages/selectlogin/selectlogin",
     "pages/registerbywechat/registerbywechat",
     "pages/register/register",
