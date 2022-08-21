@@ -5,7 +5,7 @@ Page({
 
     data: {
       name:'',
-      learnToWorkID:'',
+      learnToWorkId:'',
       reason:'',
       startTime:'',
       endTime:'',
@@ -18,9 +18,23 @@ Page({
     },
     imgBase64:function(img_url) {
       let res = wx.getFileSystemManager().readFileSync(img_url, 'base64')
-      console.log("输出base64",res)
+      console.log("输出base64",res.data)
      
       return 'data:image/jpeg;base64,'+res.data
+    },
+    imgToBase64:function(img_url){
+      var img64;
+      wx.getFileSystemManager().readFile({
+        filePath:img_url,
+        encoding:"base64",
+        success:(res)=>{
+             img64='data:image/png;base64,' + res.data
+             console.log(img64)  
+             return img64;
+             //这里有问题2
+        }
+      })
+    
     },
     bindDate1Change: function(e) {
       console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -62,14 +76,18 @@ Page({
     },
    verifyForm:function(that){
 
-     if(that.name==''||that.learnToWorkID==''||that.reason==''||that.startTime==''||that.endTime==''||that.prove==''){
+     if(that.data.name==''||that.data.learnToWorkId==''||that.data.reason==''||that.data.startTime==''||that.data.endTime==''||that.data.prove==''){
+      console.log(
+        that.data.name+that.data.learnToWorkId+that.data.reason+that.data.startTime+that.data.endTime+that.data.prove
+       )
         wx:wx.showToast({
        title: '表单不完整，请继续填写',
+       
      })
      return false
      }
     
-     else if(that.startTime>=that.endTime){
+     else if(that.data.startTime>=that.data.endTime){
       wx:wx.showToast({
         title: '截止日期应小于起始日期',
       })
@@ -85,15 +103,19 @@ Page({
       var that=this
       if(this.verifyForm(that))
       {
-        let formattedTime1=globalFun.formatDate(this.startTime)
-        let formattedTime2=globalFun.formatDate(this.endTime)
-        let formattedProve=this.imgBase64(this.prove)
+        let formattedTime1=globalFun.formatDate(this.data.startTime)
+        let formattedTime2=globalFun.formatDate(this.data.endTime)
+        console.log('图片地址：'+this.data.prove)
+        //问题处
+        let formattedProve=this.imgToBase64(this.data.prove)
+        console.log('_调试：formattedProve'+formattedProve)
          wx.request({
         url: app.globalData.url_11_Apply_Submit_in,
+        method:'POST',
         data:globalFun.json2Form({
-          learnToWorkId: this.learnToWorkId,
+          learnToWorkId: this.data.learnToWorkId,
        
-          reason:this.reason,
+          reason:this.data.reason,
           prove:formattedProve,
           startTime:formattedTime1,
           endTime:formattedTime2
@@ -144,22 +166,22 @@ Page({
       //成功则返回首页
       
 
-    setTimeout(() => {
-        wx.hideLoading();
-     }, 1000);
+    // setTimeout(() => {
+    //     wx.hideLoading();
+    //  }, 1000);
 
-    setTimeout(() => {
-       wx.showToast({
-        title: '申请成功',
-        icon: "success",
-       })
-     }, 500);
+    // setTimeout(() => {
+    //    wx.showToast({
+    //     title: '申请成功',
+    //     icon: "success",
+    //    })
+    //  }, 500);
       
-     setTimeout(() => {
-        wx.switchTab({
-            url: '../index/index',
-          })
-     }, 1000);
+    //  setTimeout(() => {
+    //     wx.switchTab({
+    //         url: '../index/index',
+    //       })
+    //  }, 1000);
         
     },
 
@@ -171,10 +193,9 @@ Page({
         sourceType: ['album', 'camera'],
         maxDuration: 30,
         camera: 'back',
-        success(res) {
+        success:(res)=> {
           console.log('文件路径'+res.tempFiles[0].tempFilePath)
-
-          that.setData({
+          this.setData({
             prove:res.tempFiles[0].tempFilePath
           })
           console.log('文件大小:'+res.tempFiles[0].size)

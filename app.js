@@ -30,6 +30,6 @@ App({
    
     url_01_OpenidCheckUser:baseRequestUrl+"getUserInfoByOpenid/",
     url_02_User_Get:baseRequestUrl+"user/get/",
-    url_11_Apply_Submit_in:baseRequestUrl+"internalApply/add"
+    url_11_Apply_Submit_in:baseRequestUrl+"internalApply/add/"
   }
 })
