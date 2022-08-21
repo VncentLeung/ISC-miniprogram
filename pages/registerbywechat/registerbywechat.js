@@ -80,7 +80,7 @@ Page({
 
         setTimeout(() => {
           wx.switchTab({
-            url: '../index/index',
+            url: '../tab1-operation/index',
           })
         }, 1000);
       }

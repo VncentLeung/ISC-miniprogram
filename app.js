@@ -16,7 +16,16 @@ App({
   },
   globalData: {
 
-    userInfo: null,//可能需要删除
+    // userInfo: null,//_调试-待取消注释
+    userInfo: {
+    'learnToWorkId': '92019101001',
+    'idCard': '362427200104115614',
+    'name': '梁峰',
+    'photo': '/images/user.png',
+    'departId': '1',
+    'state': '校内',
+    'facialFeature': '脸部特征'
+    },//_调试-待注释
     openid: "",//可能需要删除
    
     url_01_OpenidCheckUser:baseRequestUrl+"getUserInfoByOpenid/",

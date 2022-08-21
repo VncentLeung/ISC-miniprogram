@@ -61,7 +61,10 @@ Page({
             photo:res.data.data.photo,
           })
           }
-          else console.log(JSON.stringify(res))
+          else {
+           console.log(JSON.stringify(res)) 
+           console.log('获取的学工号为'+app.globalData.userInfo.learnToWorkId)
+          }
           
         }
       })

@@ -1,4 +1,4 @@
-// pages/herhistory/herhitory.js
+// pages/dating/dating.js
 Page({
 
     /**
@@ -8,6 +8,17 @@ Page({
 
     },
 
+   myhistory: function(res){
+       wx.navigateTo({
+         url: '../myhistory/myhistory',
+       })
+   },
+
+   herhistory: function(res){
+       wx.navigateTo({
+         url: '../herhistory/herhitory',
+       })
+   },
     /**
      * 生命周期函数--监听页面加载
      */

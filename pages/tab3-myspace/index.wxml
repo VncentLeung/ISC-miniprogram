@@ -1,0 +1,14 @@
+<!--pages/my/my.wxml-->
+<view class="banner" >
+  <view class="topContainer" bindtap="myinformation">
+     <text>个人信息</text>   
+  </view>
+</view>
+ 
+<view class="banner" >
+  <view class="topContainer" bindtap="updatePassword">
+    <text>修改密码</text>   
+  </view>
+</view>
+
+

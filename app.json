@@ -1,21 +1,25 @@
 {
   "pages": [
-  
+    "pages/tab1-operation/index",
+
     "pages/selectlogin/selectlogin",
     "pages/registerbywechat/registerbywechat",
     "pages/register/register",
     "pages/forgetpassword/forgetpassword",
-    "pages/index/index",
-    "pages/my/my",
-    "pages/dating/dating",
+
+    
+    "pages/tab3-myspace/index",
+    "pages/tab2-history/index",
     "pages/bindcar/bindcar",
     "pages/updatepassword/updatepassword",
     "pages/myinformation/myinformation",
-    "pages/myhistory/myhistory",
-    "pages/herhistory/herhitory",
-    "pages/out/out",
-    "pages/in/in",
-    "pages/logs/logs"
+   
+    
+    "pages/applyOut/out",
+    "pages/applyIn/in",
+    "pages/logs/logs",
+    "pages/historySelf/index",
+    "pages/historyOthers/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,19 +35,19 @@
     "backgroundColor": "white",
     "list": [
         {
-            "pagePath": "pages/index/index",
+            "pagePath": "pages/tab1-operation/index",
             "iconPath": "/images/unshouye.png",
             "selectedIconPath": "/images/shouye.png",
             "text": "申请"
         },
         {
-            "pagePath": "pages/dating/dating",
+            "pagePath": "pages/tab2-history/index",
             "iconPath": "/images/undating.png",
             "selectedIconPath": "/images/dating.png",
             "text": "申请历史"
         },
         {
-            "pagePath": "pages/my/my",
+            "pagePath": "pages/tab3-myspace/index",
             "iconPath": "/images/unmy.png",
             "selectedIconPath": "/images/my.png",
             "text": "个人中心"

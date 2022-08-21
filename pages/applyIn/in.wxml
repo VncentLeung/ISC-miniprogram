@@ -1,0 +1,79 @@
+<!--pages/out/out.wxml-->
+<view class='page'>
+    <form bindsubmit='formSubmit'>
+
+      <view class='weui-cells'>
+        <view class='weui-cell weui-cell_input weui-cell_vcode'>
+          <view class='weui-cell__hd'>
+            <view class='weui-label'>申请人</view>
+          </view>
+          <view class='weui-cell__bd'>
+            <input disabled="true"  class='weui-input' type='text' name='name' value='{{name}}' placeholder='输入姓名'/>
+          </view>
+        </view>
+      </view>
+
+      <view class='weui-cells'>
+        <view class='weui-cell weui-cell_input weui-cell_vcode'>
+          <view class='weui-cell__hd'>
+            <view class='weui-label'>申请人学号</view>
+          </view>
+          <view class='weui-cell__bd'>
+            <input disabled="true"  class='weui-input' value='{{learnToWorkId}}' type='text' name='learnToWorkId' placeholder='输入学号'/>
+          </view>
+        </view>
+      </view>
+
+      <view class='weui-cells'>
+        <view class='weui-cell weui-cell_input weui-cell_vcode'>
+          <view class='weui-cell__hd'>
+            <view class='weui-label'>入校理由</view>
+          </view>
+          <view class='weui-cell__bd'>
+            <input class='weui-input' type='text' name='reason' placeholder='请输入入校理由'/>
+          </view>
+        </view>
+      </view>
+
+     
+
+      <view class='weui-cells'>
+        <view class='weui-cell weui-cell_input weui-cell_vcode'>
+          <view class='weui-cell__hd'>
+            <view class='weui-label'>人校起始时间</view>
+          </view>
+          <view class='weui-cell__bd'>
+            <input class='weui-input' type='text' name='startTime' placeholder='请输入出校时间'/>
+          </view>
+        </view>
+      </view>
+
+      <view class='weui-cells'>
+        <view class='weui-cell weui-cell_input weui-cell_vcode'>
+          <view class='weui-cell__hd'>
+            <view class='weui-label'>人校期限时间</view>
+          </view>
+          <view class='weui-cell__bd'>
+            <input class='weui-input' type='text' name='endTime' placeholder='请输入出校时间'/>
+          </view>
+        </view>
+      </view>
+
+      <view class='weui-cells'>
+        <view class='weui-cell weui-cell_input weui-cell_vcode'>
+          <view class='weui-cell__hd'>
+            <view class='weui-label'>相关证明</view>
+          </view>
+          <view class='weui-cell__bd'>
+            <input class='weui-input' type='password' name='promise' placeholder='提交证明' bindinput='inputPassword'/>
+          </view>
+        </view>
+      </view>
+
+      <view>
+        <button class='weui-btn' type='primary' formType='submit'>保存</button>
+        <button class="weui-btn" type="primary" bindtap="returnindex">返回</button>
+      </view>
+    </form>
+
+</view>
