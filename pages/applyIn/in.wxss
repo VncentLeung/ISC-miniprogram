@@ -5,3 +5,7 @@
     align-items: center;
     overflow: hidden;
   }
+
+.imgfile{
+  display: block; width: 160rpx; height: 160rpx;
+}
