@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "component": true,
+  "usingComponents": {
+    "carApply":"carApply/index",
+    "carList":"carList/index"
+  }
+  
 }

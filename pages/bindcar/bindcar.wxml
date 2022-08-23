@@ -20,5 +20,12 @@
         <text>修改</text>
       </view>
     </form>
-
+    
+    <view class="jtab-bar">
+  <view class="jtab-bar-item" wx:for="{{list}}" wx:key="index" data-index="{{index}}" bindtap="switchTab">
+    <image wx:if="{{item.type === 'image'}}" class="jcover-img-bigicon" 
+      src="{{selected === index ? item.iconSelect : item.icon}}"></image>
+    <view class="jtab-text" wx:else style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</view>
+  </view>
+</view>
 </view>

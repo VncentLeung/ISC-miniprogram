@@ -8,7 +8,7 @@
           <view class='weui-label'>申请人</view>
         </view>
         <view class='weui-cell__bd'>
-          <input disabled="true" class='weui-input' type='text' name='name' value='{{name}}' placeholder='输入姓名' />
+          <input disabled="{{selfOrOthersApply}}" class='weui-input' type='text' name='name' value='{{name}}' placeholder='输入姓名' />
         </view>
       </view>
     </view>
@@ -19,7 +19,7 @@
           <view class='weui-label'>申请人学号</view>
         </view>
         <view class='weui-cell__bd'>
-          <input disabled="true" class='weui-input' value='{{learnToWorkId}}' type='text' name='learnToWorkId' placeholder='输入学号' />
+          <input disabled="{{selfOrOthersApply}}" class='weui-input' value='{{learnToWorkId}}' type='text' name='learnToWorkId' placeholder='输入学号' />
         </view>
       </view>
     </view>

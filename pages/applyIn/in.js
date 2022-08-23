@@ -9,7 +9,8 @@ Page({
       reason:'',
       startTime:'',
       endTime:'',
-      prove:''
+      prove:'',
+      selfOrOthersApply:''
     },
  
     onLoad:function(options){
@@ -53,12 +54,14 @@ Page({
       if(person=='self'){
         this.setData({
           name:app.globalData.userInfo.name,
-          learnToWorkId:app.globalData.userInfo.learnToWorkId
-
+          learnToWorkId:app.globalData.userInfo.learnToWorkId,
+          selfOrOthersApply:true
         })
       }
       else if(person=='others'){
-
+          this.setData({
+            selfOrOthersApply:false
+          })
       }
       else
       {

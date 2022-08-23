@@ -1,29 +1,4 @@
-/* pages/bindcar/bindcar.wxss */
-.page{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .cartext{
-    font-size: large;
-    text-align: center;
-}
-
-.banner {
-    border-radius: 10rpx;
-    border: none;
-    box-sizing: border-box;
-    padding: 20rpx 0;
-    width: 320rpx;
-    display: block;
-    height: 80rpx;
-    margin: 10rpx auto;
-    background:linear-gradient(109.6deg, rgb(204, 228, 247) 11.2%, rgb(237, 246, 250) 100.2%);
-    text-align: center;
-}
-
+/* pages/bindcar/carList/index.wxss */
 .jtab-bar {
   position: fixed;
   bottom: 0;
