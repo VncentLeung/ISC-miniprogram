@@ -22,19 +22,19 @@ Page({
      
       return 'data:image/jpeg;base64,'+res.data
     },
-    imgToBase64:function(img_url){
-      var img64;
-      wx.getFileSystemManager().readFile({
+     imgToBase64: function(img_url){
+      
+      wx.getFileSystemManager().readFileSync({
         filePath:img_url,
         encoding:"base64",
         success:(res)=>{
              img64='data:image/png;base64,' + res.data
              console.log(img64)  
-             return img64;
+            
              //这里有问题2
         }
       })
-    
+     return img64;
     },
     bindDate1Change: function(e) {
       console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -107,7 +107,9 @@ Page({
         let formattedTime2=globalFun.formatDate(this.data.endTime)
         console.log('图片地址：'+this.data.prove)
         //问题处
-        let formattedProve=this.imgToBase64(this.data.prove)
+        // let formattedProve= this.imgToBase64(this.data.prove)
+        let formattedProve= wx.getFileSystemManager().readFileSync(this.data.prove,'base64')
+        formattedProve='data:image/png;base64,'+formattedProve
         console.log('_调试：formattedProve'+formattedProve)
          wx.request({
         url: app.globalData.url_11_Apply_Submit_in,
