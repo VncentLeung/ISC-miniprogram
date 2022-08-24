@@ -28,8 +28,9 @@ App({
     },//_调试-待注释
     openid: "",//可能需要删除
    
-    url_01_OpenidCheckUser:baseRequestUrl+"getUserInfoByOpenid/",
-    url_02_User_Get:baseRequestUrl+"user/get/",
-    url_11_Apply_Submit_in:baseRequestUrl+"internalApply/add/"
+    url_01_OpenidCheckUser:baseRequestUrl+"getUserInfoByOpenid",
+    url_02_User_Get:baseRequestUrl+"user/get",
+    url_11_Apply_Submit_in:baseRequestUrl+"internalApply/add",
+    url_03_User_CarInfo_Get:baseRequestUrl+"user/getAuto"
   }
 })

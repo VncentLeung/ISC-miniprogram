@@ -23,7 +23,7 @@ inOthers: function(res){
 
   bindCar: function(res){
     wx.navigateTo({
-      url: '../bindcar/carList/index',
+      url: '../carInfoBinding/index',
     })
   }
 })

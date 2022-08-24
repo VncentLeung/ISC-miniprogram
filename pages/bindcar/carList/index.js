@@ -19,12 +19,7 @@ Component({
       type: 'text',
       text: "首页"
     }, 
-    {
-      type: 'image',
-      icon: '../../image/image_714.png',
-      iconSelect: '../../image/image_715.png',
-      text: ''
-    }, 
+   
     {
       type: 'text',
       text: "我的"
@@ -39,6 +34,11 @@ Component({
       const data = e.currentTarget.dataset
       this.setData({selected: data.index})
       this.triggerEvent("setTab", data.index)
+      if(data.index==1)
+        wx.renLaunch({
+          url: '../carApply/index',
+        })
+
     }
   }
 })

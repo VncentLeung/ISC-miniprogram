@@ -16,7 +16,8 @@
     "pages/historySelf/index",
     "pages/historyOthers/index",
     "pages/bindcar/carList/index",
-    "pages/bindcar/carApply/index"
+    "pages/bindcar/carApply/index",
+    "pages/carInfoBinding/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
