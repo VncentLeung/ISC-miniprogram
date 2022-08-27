@@ -1,6 +1,10 @@
 // pages/bindcar/carList/index.js
+import{
+  Http
+}from '../../../utils/util.js'
 const app=getApp()
 var globalFun = require('../../../utils/util').default;
+
 Component({
   /**
    * 组件的属性列表
@@ -8,12 +12,26 @@ Component({
   properties: {
 
   },
+  lifetimes: {
+    // 生命周期函数，可以为函数，或一个在 methods 段中定义的方法名
+    attached: function () {this.initPage },
+    moved: function () {this.initPage },
+    detached: function () { this.initPage},
+  },
 
+  // behavior:  ['wx://component-export'],
+
+  // export : {
+  //    initPage()
+  // },
   /**
    * 组件的初始数据
    */
+  getList:function(){
+    this.initPage()
+  },
   data: {
-    numlist:[]
+    numlist:'无'
   },
   pageLifetimes: {
     show: function() {
@@ -22,18 +40,19 @@ Component({
       console.log('pageLifetimes执行了show')
     },
     hide: function() {
-      // 页面被隐藏
+      this.initPage
     },
     resize: function(size) {
-      // 页面尺寸变化
+      this.initPage
     }
   },
-
+ 
   /**
    * 组件的方法列表
    */
   methods: {
     initPage:function(){
+      var that=this
       wx.request({
         url: app.globalData.url_03_User_CarInfo_Get,
         method:'POST',
@@ -47,7 +66,7 @@ Component({
           if(res.data.result=='success'){
             console.log('获取信息成功');
             console.log(JSON.stringify(res.data))
-            this.setData({
+            that.setData({
             numlist:res.data.data
           })
           }
@@ -58,6 +77,23 @@ Component({
           }
           
         }
+      })
+    },
+     getList: async function(){
+      var list
+      await Http.asyncRequest(
+        app.globalData.url_03_User_CarInfo_Get,
+        'POST',{
+          learnToWorkId: app.globalData.userInfo.learnToWorkId
+        },
+        res=>{
+          console.log(res);
+          list=res.data.data
+          console.log('_调试3:调试成功')
+        }
+      )
+      this.setData({
+          numlist:list
       })
     }
   }

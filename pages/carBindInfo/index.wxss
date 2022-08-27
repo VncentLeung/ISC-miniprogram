@@ -1,0 +1,53 @@
+/* pages/carBindInfo/index.wxss */
+page{
+  height: 100%;
+}
+.center-css{ 
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+.button-css1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30rpx auto 30rpx auto;
+  border-radius: 30rpx;
+ 
+  width: 600rpx;
+  height: 200rpx;
+  background-color: #f6416c;
+
+}
+.button-css2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  border-radius: 30rpx;
+  margin: 30rpx auto 30rpx auto;
+
+
+  width: 600rpx;
+  height: 200rpx;
+  background-color: #00b8a9;
+}
+.text-big{
+  font-size: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  color: white;
+}
+.text-small{
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  color: rgb(233, 233, 233);
+}

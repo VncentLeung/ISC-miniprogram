@@ -1,4 +1,6 @@
 // pages/historySelf/index.js
+const app=getApp();
+var globalFun = require('../../utils/util').default;
 Page({
 
     /**
