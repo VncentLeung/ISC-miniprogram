@@ -31,8 +31,10 @@ App({
     url_01_OpenidCheckUser:baseRequestUrl+"getUserInfoByOpenid",//通过Openid获取用户账户
     url_02_User_Get:baseRequestUrl+"user/get",//获取用户等级信息
     url_11_Apply_Submit_in:baseRequestUrl+"internalApply/add",//提交申请
+    url_11_Apply_Submit_ex:baseRequestUrl+'externalApply/add',
     url_03_User_CarInfo_Get:baseRequestUrl+"user/getAuto",//获取车辆等级信息
     url_12_Add_Auto:baseRequestUrl+'user/addAuto',
-    url_13_Get_SelfHistory:baseRequestUrl+'inOutFormGet/'
+    url_13_Get_SelfHistory:baseRequestUrl+'inOutFormGet',
+    url_14_Password_Update:baseRequestUrl+'user/changePWD'
   }
 })

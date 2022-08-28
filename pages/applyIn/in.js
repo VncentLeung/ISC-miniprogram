@@ -111,10 +111,16 @@ Page({
         idCard:e.detail.value
       })
     },
+    carNumber:function(e){
+      this.setData({
+        carNumber:e.detail.value
+      })
+    },
+    
 
    verifyForm:function(that){
 
-     if(that.data.learnToWorkId==''||that.data.reason==''||that.data.startTime==''||that.data.endTime==''||that.data.prove==''){
+     if(that.data.learnToWorkId==''||that.data.reason==''||that.data.startTime==''||that.data.endTime==''||(that.data.prove!=''||that.data.photo!='')){
       console.log(
         that.data.name+that.data.learnToWorkId+that.data.reason+that.data.startTime+that.data.endTime+that.data.prove
        )
@@ -145,9 +151,33 @@ Page({
         console.log('图片地址：'+this.data.prove)
         //问题处
         // let formattedProve= this.imgToBase64(this.data.prove)
-        let formattedProve= wx.getFileSystemManager().readFileSync(this.data.prove,'base64')
-        formattedProve='data:image/png;base64,'+formattedProve
-        console.log('_调试：formattedProve'+formattedProve)
+        //格式化证明
+        var formattednucleicAcidProof=''
+        var formattedProve=''
+        var formattedPhoto=''
+        var formattedhealthCode=''
+
+        if(this.selfOrOthersApply){
+             formattedProve= wx.getFileSystemManager().readFileSync(this.data.prove,'base64')
+            formattedProve='data:image/png;base64,'+formattedProve
+            console.log('_调试：formattedProve'+formattedProve)
+        }
+        else{
+           formattedPhoto= wx.getFileSystemManager().readFileSync(this.data.photo,'base64')
+          formattedPhoto='data:image/png;base64,'+formattedPhoto
+          if(this.data.healthCode!=''){
+             formattedhealthCode= wx.getFileSystemManager().readFileSync(this.data.healthCode,'base64')
+            formattedhealthCode='data:image/png;base64,'+formattedhealthCode
+          }
+          if(this.data.nucleicAcidProof!=''){
+             formattednucleicAcidProof= wx.getFileSystemManager().readFileSync(this.data.nucleicAcidProof,'base64')
+            formattednucleicAcidProof='data:image/png;base64,'+formattednucleicAcidProof
+          }
+        }
+      
+
+
+        if(this.data.selfOrOthersApply)
          wx.request({
         url: app.globalData.url_11_Apply_Submit_in,
         method:'POST',
@@ -192,6 +222,58 @@ Page({
           }
         }
       })
+      else{
+        wx.request({
+          url: app.globalData.url_11_Apply_Submit_ex,
+          method:'POST',
+          data:globalFun.json2Form({
+            learnToWorkId: this.data.learnToWorkId,
+            realName:this.data.realName,
+            reason:this.data.reason,
+            startTime:formattedTime1,
+            endTime:formattedTime2,
+            relation:this.data.relation,
+            carNumber:this.data.carNumber,
+            
+            healthCode:formattedhealthCode,
+            photo:formattedPhoto,
+            nucleicAcidProof:formattednucleicAcidProof,
+            
+          }),
+          header: {
+            'content-type': 'application/x-www-form-urlencoded' // 小程序post所需要的配置信息
+          },
+          success(res){
+            console.log(JSON.stringify(res.data))
+            if(res.data.result=='success'){
+              wx.showToast({
+                title: '提交成功',
+                icon: "success",
+              })
+              setTimeout(() => {
+                wx.reLaunch({
+                  url:'../tab1-operation/index',
+                })
+              }, 1000);
+            }
+            else{
+              wx.showModal({
+                 title: '申请提示',
+                  content:'错误信息'+res.data.message+'\n请联系管理员',
+                success: function (res) {
+                  if (res.confirm) {//这里是点击了确定以后
+                    console.log('用户点击确定')
+                  } else {//这里是点击了取消以后
+                    console.log('用户点击取消')
+                  }
+                }
+            
+              })
+           
+            }
+          }
+        })
+      }
       }
      
       // wx.showLoading({

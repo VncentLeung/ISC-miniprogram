@@ -12,49 +12,53 @@ Page({
       total:0,
       account: "",
       list:[
-        {'inOutFormId':'1',
+        {'applyformId':'1',
          'learnToWorkId':'92019101003',
          'reason':'申请的原因是11',
          'startTime':'2022-01-01 11:11:11',
          'endTime': '2022-01-03 11:11:11',
          'applyTime':'2019-12-01 11:11:11',
-         'prove':'证明',
-         'type':'type字段',
+         'nucleicAcidProof':'核酸结果','phone':'照片','healthCode':'健康码','destination':'目的地',
+'relation':'关系','carNumber':'车牌号','idCard':'身份证号',
+           
          'auditState':'auditState字段',
-         'name':'名字字段3'
+         'realName':'名字字段3'
          },
-        {'inOutFormId':'2',
+        {'applyformId':'2',
          'learnToWorkId':'92019101004',
          'reason':'申请的原因是22',
          'startTime':'2022-02-01 11:11:11',
          'endTime': '2022-02-03 11:11:11',
          'applyTime':'2019-12-02 11:11:11',
-         'prove':'证明',
-         'type':'type字段',
+         'nucleicAcidProof':'核酸结果','phone':'照片','healthCode':'健康码','destination':'目的地',
+'relation':'关系','carNumber':'车牌号','idCard':'身份证号',
+           
          'auditState':'auditState字段',
-         'name':'名字字段4'},
+         'realName':'名字字段4'},
         {
-            'inOutFormId': '3',
+            'applyformId': '3',
             'learnToWorkId': '92019101003',
             'reason': '申请的原因是33',
             'startTime': '2022-02-03 11:11:11',
             'endTime': '2022-02-05 11:11:11',
             'applyTime': '2019-12-05 11:11:11',
-            'prove': '证明',
-            'type': 'type字段',
+            'nucleicAcidProof':'核酸结果','phone':'照片','healthCode':'健康码','destination':'目的地',
+'relation':'关系','carNumber':'车牌号','idCard':'身份证号',
+             
             'auditState': 'auditState字段',
-            'name': '名字字段2'
+            'realName': '名字字段2'
         },
-        {'inOutFormId':'4',
+        {'applyformId':'4',
          'learnToWorkId':'92019101004',
          'reason':'申请的原因是44',
          'startTime':'2022-03-01 11:11:11',
          'endTime': '2022-03-05 11:11:11',
          'applyTime':'2019-12-05 11:11:11',
-         'prove':'证明',
-         'type':'type字段',
+         'nucleicAcidProof':'核酸结果','phone':'照片','healthCode':'健康码','destination':'目的地',
+'relation':'关系','carNumber':'车牌号','idCard':'身份证号',
+           
          'auditState':'auditState字段',
-         'name':'名字字段4'}
+         'realName':'名字字段4'}
     ]
   
     },
@@ -67,7 +71,7 @@ Page({
     },
     clickOpen:function(e){
       if(this.data.selected!=e.target.dataset.id)
-      //获取设置的id（即inOutFormId）,用以控制详情展示
+      //获取设置的id（即applyformId）,用以控制详情展示
       this.setData({
         selected:e.target.dataset.id
       })
@@ -79,7 +83,7 @@ Page({
 getListInfo:function() {
 
       // this.setData({
-      //       shipName: wx.getStorageSync('account')
+      //       ship  realName: wx.getStorageSync('account')
       //     });
       this.setData({page:1});
       var that = this;
