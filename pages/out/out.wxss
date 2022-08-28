@@ -1,7 +1,0 @@
-/* pages/out/out.wxss */
-.page{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-  }

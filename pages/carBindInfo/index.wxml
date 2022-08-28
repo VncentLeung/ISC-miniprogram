@@ -1,0 +1,12 @@
+<!--pages/carBindInfo/index.wxml-->
+  <view class="center-css">
+    <view class="button-css1" bindtap="info">
+      <view class="text-big">已绑车辆</view>
+      <view class="text-small">查看现已登记绑定的车辆牌照</view>
+    </view>
+    <view class="button-css2" bindtap="bind">
+      <view class="text-big">
+       新增绑定 </view> 
+      <view class="text-small">申请绑定新的车辆</view>
+    </view>
+  </view>

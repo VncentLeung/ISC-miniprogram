@@ -1,0 +1,24 @@
+<view class="banner" >
+  <view class="topContainer" bindtap="inSelf">
+     <text>为自己申请入校</text>   
+  </view>
+</view>
+ 
+<view class="banner" >
+  <view class="topContainer" bindtap="inOthers">
+    <text>为他人申请入校</text>   
+  </view>
+</view>
+
+<view class="banner" >
+  <view class="topContainer" bindtap="out">
+    <text>为自己申请出校</text>   
+  </view>
+</view>
+
+<view class="banner" >
+  <view class="topContainer" bindtap="bindCar">
+    <text>申请绑定车辆信息</text>   
+  </view>
+</view>
+

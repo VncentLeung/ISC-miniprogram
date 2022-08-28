@@ -1,0 +1,10 @@
+<!--pages/carInfoBinding/index.wxml-->
+
+<view class='container'>
+ <view class='tab-wrapper'>
+  <view id='tableft'  class='tab-left {{currentTab === 0 ? "tab-active":""}}' bindtap='switchTab'>已绑车辆</view>
+  <view id='tabright' class='tab-right {{currentTab === 1 ? "tab-active" : ""}}' bindtap='switchTab'>申请绑定</view>
+ </view>
+ <view class='content-wrapper' wx:if='{{currentTab === 0}}'><carList wx:if="{{tab1show}}"  /></view>
+ <view class='content-wrapper' wx:if='{{currentTab === 1}}'><carApply wx:if="{{tab2show}}"  /></view>
+</view>

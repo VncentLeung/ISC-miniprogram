@@ -1,0 +1,92 @@
+<!--pages/out/out.wxml-->
+<view class='page'>
+  <form bindsubmit='formSubmit'>
+
+    <view class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>申请人</view>
+        </view>
+        <view class='weui-cell__bd'>
+          <input disabled="true" class='weui-input' type='text' name='name' value='{{name}}' placeholder='输入姓名' />
+        </view>
+      </view>
+    </view>
+
+    <view class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>申请人学号</view>
+        </view>
+        <view class='weui-cell__bd'>
+          <input disabled="{{true}}" class='weui-input' value='{{learnToWorkId}}' type='text' name='learnToWorkId' placeholder='输入学号' />
+        </view>
+      </view>
+    </view>
+
+    <view class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>出校理由</view>
+        </view>
+        <view class='weui-cell__bd'>
+          <input class='weui-input' type='text' name='reason' placeholder='请输入出校理由' bindinput="reason" />
+        </view>
+      </view>
+    </view>
+
+
+
+    <view class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>出校起始时间</view>
+        </view>
+        <view class="section">
+          <view class="section__title"></view>
+          <picker mode="date" value="{{startTime}}" start="2022-09-01" end="2099-09-01" bindchange="bindDate1Change">
+            <view class="picker">
+              选择时间 {{startTime}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+
+    <view class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>出校截止时间</view>
+        </view>
+        <view class="section">
+          <view class="section__title"></view>
+          <picker mode="date" value="{{endTime}}" start="2022-09-01" end="2099-09-01" bindchange="bindDate2Change">
+            <view class="picker">
+              选择时间 {{endTime}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+
+    <view class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>相关证明</view>
+        </view>
+        <view>
+       
+        </view>
+        <view bindtap="chooseMedia">   <image wx:if="{{(prove.length<=0)==false}}"  class="imgfile" src="{{prove}}"></image>
+            <image wx:if="{{(prove.length<=0)==true}}"  class="imgfile" src="/images/upload.jpg"></image>
+        </view>
+      </view>
+    </view>
+
+    <view>
+      <button class='weui-btn' type='primary' formType='submit'>保存</button>
+      <button class="weui-btn" type="primary" bindtap="returnindex">返回</button>
+    </view>
+  </form>
+
+</view>

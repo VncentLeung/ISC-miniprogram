@@ -1,0 +1,8 @@
+<!--pages/bindcar/carList/index.wxml-->
+<text>pages/bindcar/carList/index.wxml</text>
+<view class="jtab-bar">
+  <view class="jtab-bar-item" wx:for="{{list}}" wx:key="index" data-index="{{index}}" bindtap="switchTab">
+   
+    <view class="jtab-text"  style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</view>
+  </view>
+</view>

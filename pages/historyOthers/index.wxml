@@ -1,0 +1,22 @@
+<!--pages/historyOthers/index.wxml-->
+
+
+<view    wx:for="{{list}}" wx:for-item="item" wx:key="applyformId" >
+<view data-id="{{item.applyformId}}" catchtap="clickOpen" class="list-title"> <view  wx:if="{{false}}">{{item.applyformId}}</view>
+ <view>{{item.applyTime}}</view>
+ <view >    <image style="margin: auto 0.6rem auto auto;" wx:if="{{item.applyformId == selected}}" class="more" src="/images/arrow.svg"></image>
+    <image style="margin: auto 0.6rem auto auto;" wx:else class="less" src="/images/arrow.svg"></image></view>
+ </view>
+ <view wx:if="{{item.applyformId== selected }}">
+ <view class="list-item">
+<view>姓名</view>
+<view>{{item.realName}} </view>
+</view>
+<view class="list-item">
+<view>原因</view>
+<view>{{item.reason}}</view></view>
+ </view>
+
+
+</view>
+

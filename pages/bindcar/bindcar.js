@@ -2,6 +2,7 @@
 Page({
     data: {
        carid: "",
+       currentIndex:0
     },
 
   updateBindcar: function(res){
@@ -42,6 +43,25 @@ formSubmit: function (e) {
   })
   //传递参数到后端，修改后端数据库
   
+},
+  
+pagechange: function (ee) {
+  let that=this;
+  console.log(ee.detail.source)
+  if ("touch" === ee.detail.source) {
+    let currentPageIndex = that.data.currentIndex;
+    currentPageIndex = (currentPageIndex+1) % 2;
+   
+    that.setData({
+      currentIndex: currentPageIndex,
+    })
+  }
+},
+
+titleClick: function (e) {
+  this.setData({
+    //拿到当前索引并动态改变
+    currentIndex: e.currentTarget.dataset.idx
+  })
 }
-    
 })
