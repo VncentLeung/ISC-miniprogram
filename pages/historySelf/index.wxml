@@ -1,6 +1,6 @@
 <!--pages/historySelf/index.wxml-->
 
-<view class="container">
+<!-- <view class="container">
   <view class="page-body">
     <view style="margin-top:10px; padding:10px; background:#eeeeee;" wx:for="{{list}}" wx:key="key">
     <view>
@@ -33,5 +33,23 @@
     </view>
 
   </view>
+</view> -->
+<view    wx:for="{{list}}" wx:for-item="item" wx:key="inOutFormId" >
+<view data-id="{{item.inOutFormId}}" catchtap="clickOpen" class="list-title"> <view  wx:if="{{false}}">{{item.inOutFormId}}</view>
+ <view>{{item.applyTime}}</view>
+ <view >    <image style="margin: auto 0.6rem auto auto;" wx:if="{{item.inOutFormId == selected}}" class="more" src="/images/arrow.svg"></image>
+    <image style="margin: auto 0.6rem auto auto;" wx:else class="less" src="/images/arrow.svg"></image></view>
+ </view>
+ <view wx:if="{{item.inOutFormId== selected }}">
+ <view class="list-item">
+<view>学工号</view>
+<view>{{item.learnToWorkId}} </view>
+</view>
+<view class="list-item">
+<view>原因</view>
+<view>{{item.reason}}</view></view>
+ </view>
+
+
 </view>
 
