@@ -10,7 +10,18 @@ Page({
       startTime:'',
       endTime:'',
       prove:'',
-      selfOrOthersApply:''
+      selfOrOthersApply:'',
+
+
+      realName:'',
+      idCard:'',
+      nucleicAcidProof:'',
+      phone:'',
+      photo:'',
+      destination:'',
+      healthCode:'',
+      relation:'',
+      carNumber:'',
     },
  
     onLoad:function(options){
@@ -32,7 +43,7 @@ Page({
              img64='data:image/png;base64,' + res.data
              console.log(img64)  
             
-             //这里有问题2
+             
         }
       })
      return img64;
@@ -59,7 +70,10 @@ Page({
         })
       }
       else if(person=='others'){
+        
           this.setData({
+            name:app.globalData.userInfo.name,
+            learnToWorkId:app.globalData.userInfo.learnToWorkId,
             selfOrOthersApply:false
           })
       }
@@ -77,9 +91,30 @@ Page({
         reason:e.detail.value
       })
     },
+    realName:function(e){
+      this.setData({
+        realName:e.detail.value
+      })
+    },
+    destination:function(e){
+      this.setData({
+        destination:e.detail.value
+      })
+    },
+    phone:function(e){
+      this.setData({
+        phone:e.detail.value
+      })
+    },
+    idCard:function(e){
+      this.setData({
+        idCard:e.detail.value
+      })
+    },
+
    verifyForm:function(that){
 
-     if(that.data.name==''||that.data.learnToWorkId==''||that.data.reason==''||that.data.startTime==''||that.data.endTime==''||that.data.prove==''){
+     if(that.data.learnToWorkId==''||that.data.reason==''||that.data.startTime==''||that.data.endTime==''||that.data.prove==''){
       console.log(
         that.data.name+that.data.learnToWorkId+that.data.reason+that.data.startTime+that.data.endTime+that.data.prove
        )
@@ -89,7 +124,6 @@ Page({
      })
      return false
      }
-    
      else if(that.data.startTime>=that.data.endTime){
       wx:wx.showToast({
         title: '截止日期应小于起始日期',
@@ -99,9 +133,9 @@ Page({
      else{
        return true
      }
-
    }
-,    formSubmit: function (e) {
+,    
+    formSubmit: function (e) {
       console.log(e)
       var that=this
       if(this.verifyForm(that))
@@ -190,7 +224,7 @@ Page({
         
     },
 
-    chooseMedia (){
+    chooseMedia:function (e){
       var that=this;
       wx.chooseMedia({
         count: 1,
@@ -200,14 +234,21 @@ Page({
         camera: 'back',
         success:(res)=> {
           console.log('文件路径'+res.tempFiles[0].tempFilePath)
+          console.log(e)
+          console.log(e.currentTarget.id)
+          const _fileName=e.currentTarget.id
           this.setData({
-            prove:res.tempFiles[0].tempFilePath
+            [_fileName]:res.tempFiles[0].tempFilePath
           })
+          
+
           console.log('文件大小:'+res.tempFiles[0].size)
         }
       })
-    }
- ,
+    },
+  
+ 
+
 
 // upLoadMedia(){
 // 	wx.request({

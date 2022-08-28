@@ -24,6 +24,53 @@
       </view>
     </view>
 
+    <view wx:if="{{!selfOrOthersApply}}" class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>入校者姓名</view>
+        </view>
+        <view class='weui-cell__bd'>
+          <input  class='weui-input' type='text' name='realName' value='{{realName}}' placeholder='输入入校人姓名' bindinput="realName" />
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{!selfOrOthersApply}}" class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>入校人身份证号</view>
+        </view>
+        <view class='weui-cell__bd'>
+          <input class='weui-input' value='{{idCard}}' type='text' name='idCard' placeholder='输入身份证号' bindinput="idCard" />
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{!selfOrOthersApply}}" class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>入校人手机号</view>
+        </view>
+        <view class='weui-cell__bd'>
+          <input class='weui-input' value='{{phone}}' type='text' name='phone' placeholder='输入入校人手机号'  bindinput="phone"/>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{!selfOrOthersApply}}" class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>目的地</view>
+        </view>
+        <view class='weui-cell__bd'>
+          <input class='weui-input' value='{{destination}}' type='text' name='destination' placeholder='输入目的地' bindinput="destination"  />
+        </view>
+      </view>
+    </view>
+
+
+
+
     <view class='weui-cells'>
       <view class='weui-cell weui-cell_input weui-cell_vcode'>
         <view class='weui-cell__hd'>
@@ -35,6 +82,16 @@
       </view>
     </view>
 
+    <view class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>入校人与申请人关系</view>
+        </view>
+        <view class='weui-cell__bd'>
+          <input class='weui-input' type='text' name='relation' placeholder='请输入关系' bindinput="relation" />
+        </view>
+      </view>
+    </view>
 
 
     <view class='weui-cells'>
@@ -69,7 +126,7 @@
       </view>
     </view>
 
-    <view class='weui-cells'>
+    <view wx:if="{{selfOrOthersApply}}" class='weui-cells'>
       <view class='weui-cell weui-cell_input weui-cell_vcode'>
         <view class='weui-cell__hd'>
           <view class='weui-label'>相关证明</view>
@@ -77,8 +134,52 @@
         <view>
        
         </view>
-        <view bindtap="chooseMedia">   <image wx:if="{{(prove.length<=0)==false}}"  class="imgfile" src="{{prove}}"></image>
+        <view id='prove' bindtap="chooseMedia">   <image wx:if="{{(prove.length<=0)==false}}"  class="imgfile" src="{{prove}}"></image>
             <image wx:if="{{(prove.length<=0)==true}}"  class="imgfile" src="/images/upload.jpg"></image>
+        </view>
+      </view>
+    </view>
+
+
+
+    <view wx:if="{{!selfOrOthersApply}}" class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>核酸证明</view>
+        </view>
+        <view>
+       
+        </view>
+        <view id='nucleicAcidProof' bindtap="chooseMedia">   <image wx:if="{{(nucleicAcidProof.length<=0)==false}}"  class="imgfile" src="{{nucleicAcidProof}}"></image>
+            <image wx:if="{{(nucleicAcidProof.length<=0)==true}}"  class="imgfile" src="/images/upload.jpg"></image>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{!selfOrOthersApply}}" class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>健康码</view>
+        </view>
+        <view>
+       
+        </view>
+        <view id='healthCode' bindtap="chooseMedia">   <image wx:if="{{(healthCode.length<=0)==false}}"  class="imgfile" src="{{healthCode}}"></image>
+            <image wx:if="{{(healthCode.length<=0)==true}}"  class="imgfile" src="/images/upload.jpg"></image>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{!selfOrOthersApply}}" class='weui-cells'>
+      <view class='weui-cell weui-cell_input weui-cell_vcode'>
+        <view class='weui-cell__hd'>
+          <view class='weui-label'>人脸照片</view>
+        </view>
+        <view>
+       
+        </view>
+        <view id='photo' bindtap="chooseMedia">   <image wx:if="{{(photo.length<=0)==false}}"  class="imgfile" src="{{photo}}"></image>
+            <image wx:if="{{(photo.length<=0)==true}}"  class="imgfile" src="/images/upload.jpg"></image>
         </view>
       </view>
     </view>
