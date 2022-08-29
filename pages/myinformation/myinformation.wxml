@@ -2,10 +2,12 @@
 <view class="banner" >
     <view class="topContainer">
         <view catchtap="showBcgImgArea">
-            <image class="userinfo-avatar" mode="aspectFill" src="{{photo}}"></image>
+            <image mode="aspectFit" class="userinfo-avatar" mode="aspectFill" src="{{localImgUrl}}"></image>
         </view>
     </view>
+    
     <view class="container-items">
+      
       <view class='item' bindtap='myBag'>
         <text class="it" space="emsp">姓名:    {{name}}</text>
       </view> 

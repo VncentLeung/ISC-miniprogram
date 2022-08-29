@@ -10,6 +10,7 @@ Page({
         learnToWorkId: "未获取到信息",
         idCard: "未获取到信息",
         departId: "未获取到信息",
+        localImgUrl:''
     },
     /**
       * 生命周期函数--监听页面加载
@@ -37,22 +38,40 @@ Page({
             
         //  })
    },
+   imageFix:function(){
+   var base64 = "data:image/PNG;base64," + this.data.photo;
+
+   var imgPath = wx.env.USER_DATA_PATH + '/e-invoice' + Date.parse(new Date()) + '.png';
+
+   var imageData = base64.replace(/^data:image\/\w+;base64,/, "");
+
+   var fs = wx.getFileSystemManager();
+
+   fs.writeFileSync(imgPath, imageData, "base64");
+
+   fs.close();
+
+   this.setData({
+
+     localImgUrl: imgPath
+
+   })
+  },
    getInfo(that){
       wx.request({
-        url: app.globalData.url_02_User_Get,
-        method:'POST',
-        data:globalFun.json2Form({
-          learnToWorkId: app.globalData.userInfo.learnToWorkId
-        }),
+        url: app.globalData.url_02_User_Get+app.globalData.learnToWorkId,
+        method:'GET',
+        data:[],
         header: {
           'content-type': 'application/x-www-form-urlencoded' // 小程序post所需要的配置信息
+         , 'token':app.globalData.token
         },
         success(res){
           if(res.data.result=='success'){
             console.log('获取信息成功');
             console.log(JSON.stringify(res.data))
             that.setData({
-            learnToWorkId:res.data.data.learnToWorkId,
+            learnToWorkId:app.globalData.learnToWorkId,
             name:res.data.data.name,
             idCard:res.data.data.idCard,
             departId:res.data.data.departId,
@@ -60,10 +79,11 @@ Page({
             facialFeature:res.data.data.facialFeature,
             photo:res.data.data.photo,
           })
+          that.imageFix();
           }
           else {
            console.log(JSON.stringify(res)) 
-           console.log('获取的学工号为'+app.globalData.userInfo.learnToWorkId)
+           console.log('获取的学工号为'+app.globalData.learnToWorkId)
           }
           
         }

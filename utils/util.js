@@ -61,11 +61,12 @@ const promisic = function (func) {//供Http类调用
 
 class Http {
     // 同步Http请求
-    static async asyncRequest(url, method, data, backMethod) {//供页面中的同步请求调用
+    static async asyncRequest(url, method, data, header,backMethod) {//供页面中的同步请求调用
         let res = await promisic(wx.request)({
             url: url,
             method: method,
             data: data,
+            header:header
         })
         backMethod(res)
     }
