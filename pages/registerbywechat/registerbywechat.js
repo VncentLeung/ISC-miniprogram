@@ -83,7 +83,7 @@ Page({
         console.log('请求3')
         console.log(JSON.stringify(res.data))
         app.globalData.userInfo = res.data.data;
-        userInfo.learnToWorkId=app.globalData.learnToWorkId
+        app.globalData.userInfo.learnToWorkId=app.globalData.learnToWorkId
         console.log(app.globalData.userInfo)
         setTimeout(() => {
           wx.showToast({

@@ -3,6 +3,7 @@
     <view class="topContainer">
         <view catchtap="showBcgImgArea">
             <image mode="aspectFit" class="userinfo-avatar" mode="aspectFill" src="{{localImgUrl}}"></image>
+            <image mode="aspectFit" class="userinfo-avatar" mode="aspectFill" src="{{photo}}"></image>
         </view>
     </view>
     
@@ -22,7 +23,7 @@
         <text class="it" space="emsp">身份证号:  {{idCard}}</text>
       </view>
       <view class='item' bindtap='myRoute'>
-        <text class="it" space="emsp">学院:    {{departId}}</text>
+        <text class="it" space="emsp">学院:    {{deparName}}</text>
       </view>
       <text class="logout" bindtap="logout">退出登录</text>
     </view>

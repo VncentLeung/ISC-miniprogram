@@ -39,9 +39,9 @@ Page({
         //  })
    },
    imageFix:function(){
-   var base64 = "data:image/PNG;base64," + this.data.photo;
+   var base64 = "data:image/jpg;base64," + this.data.photo;
 
-   var imgPath = wx.env.USER_DATA_PATH + '/e-invoice' + Date.parse(new Date()) + '.png';
+   var imgPath = wx.env.USER_DATA_PATH + '/e-invoice' + Date.parse(new Date()) + '.jpg';
 
    var imageData = base64.replace(/^data:image\/\w+;base64,/, "");
 
@@ -70,6 +70,7 @@ Page({
           if(res.data.result=='success'){
             console.log('获取信息成功');
             console.log(JSON.stringify(res.data))
+            // globalFun.base64toImg(res.data.data)
             that.setData({
             learnToWorkId:app.globalData.learnToWorkId,
             name:res.data.data.name,
@@ -78,8 +79,10 @@ Page({
             state:res.data.data.state,
             facialFeature:res.data.data.facialFeature,
             photo:res.data.data.photo,
+            deparName:res.data.data.deparName
           })
           that.imageFix();
+          // globalFun.base64toImg(that.data)
           }
           else {
            console.log(JSON.stringify(res)) 

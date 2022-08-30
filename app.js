@@ -35,7 +35,8 @@ App({
     url_11_Apply_Submit_ex:baseRequestUrl+'externalApply/add',
     url_03_User_CarInfo_Get:baseRequestUrl+"user/getAuto",//获取车辆等级信息
     url_12_Add_Auto:baseRequestUrl+'user/addAuto',
-    url_13_Get_SelfHistory:baseRequestUrl+'inOutFormGet',
+    url_13_Get_SelfHistory:baseRequestUrl+'internalApply/get',
+    url_13_Get_OthersHistory:baseRequestUrl+'externalApply/get',
     url_14_Password_Update:baseRequestUrl+'user/changePWD'
   }
 })

@@ -34,22 +34,44 @@
 
   </view>
 </view> -->
-<view    wx:for="{{list}}" wx:for-item="item" wx:key="inOutFormId" data-id="{{item.applyformId}}">
-<view catchtap="clickOpen" class="list-title"> <view  wx:if="{{false}}">{{item.inOutFormId}}</view>
- <view>{{item.applyTime}}</view>
- <view >    <image style="margin: auto 0.6rem auto auto;" wx:if="{{item.inOutFormId == selected}}" class="more" src="/images/arrow.svg"></image>
-    <image style="margin: auto 0.6rem auto auto;" wx:else class="less" src="/images/arrow.svg"></image></view>
- </view>
- <view wx:if="{{item.inOutFormId== selected }}">
- <view class="list-item">
-<view>学工号</view>
-<view>{{item.learnToWorkId}} </view>
+<view wx:for="{{list}}" wx:for-item="item" wx:key="inOutFormId">
+  <view data-id="{{item.inOutFormId}}" catchtap="clickOpen" class="list-title">
+    <view wx:if="{{false}}">{{item.inOutFormId}}</view>
+    <view>{{item.applyTime}}</view>
+    <view> {{item.auditState}} <image style="margin: auto 0.6rem auto auto;" wx:if="{{item.inOutFormId == selected}}" class="more" src="/images/arrow.svg"></image>
+      <image style="margin: auto 0.6rem auto auto;" wx:else class="less" src="/images/arrow.svg"></image>
+    </view>
+  </view>
+
+  <view wx:if="{{item.inOutFormId== selected }}">
+    <view class="list-item">
+      <view>学工号</view>
+      <view>{{item.learnToWorkId}} </view>
+    </view>
+    <view class="list-item">
+      <view>申请类型</view>
+      <view>{{item.type}} </view>
+    </view>
+    <view class="list-item">
+      <view>原因</view>
+      <view>{{item.reason}}</view>
+    </view>
+    <view class="list-item">
+      <view>起始时间</view>
+      <view>{{item.startTime}}</view>
+    </view>
+    <view class="list-item">
+      <view>期限时间</view>
+      <view>{{item.endTime}}</view>
+    </view>
+    <view class="list-item">
+      <view>相关证明</view>
+      <view>
+        <image mode="aspectFit" style="width: 400rpx;" wx:if="{{item.prove}}" src="{{item.prove}}"></image>
+        <view wx:else>无</view>
+      </view>
+    </view>
+
+  </view>
+
 </view>
-<view class="list-item">
-<view>原因</view>
-<view>{{item.reason}}</view></view>
- </view>
-
-
-</view>
-

@@ -12,60 +12,36 @@ Page({
       total:0,
       account: "",
       list:[
-        {'inOutFormId':'1',
-         'learnToWorkId':'92019101003',
-         'reason':'申请的原因是11',
-         'startTime':'2022-01-01 11:11:11',
-         'endTime': '2022-01-03 11:11:11',
-         'applyTime':'2019-12-01 11:11:11',
-         'prove':'证明',
-         'type':'type字段',
-         'auditState':'auditState字段',
-         'name':'名字字段3'
+        {'applyFormId':'1',
+         'learnToWorkId':'000',
+         'reason':'无',
+         'startTime':'',
+         'endTime': '',
+         'applyTime':'无数据 请检查是否出错',
+         'nucleicAcidProof':'核酸结果','phone':'照片','healthCode':'健康码','destination':'目的地',
+'relation':'关系','carNumber':'车牌号','idCard':'身份证号',
+           
+         'auditState':'状态',
+         'realName':'姓名'
          },
-        {'inOutFormId':'2',
-         'learnToWorkId':'92019101004',
-         'reason':'申请的原因是22',
-         'startTime':'2022-02-01 11:11:11',
-         'endTime': '2022-02-03 11:11:11',
-         'applyTime':'2019-12-02 11:11:11',
-         'prove':'证明',
-         'type':'type字段',
-         'auditState':'auditState字段',
-         'name':'名字字段4'},
-        {
-            'inOutFormId': '3',
-            'learnToWorkId': '92019101003',
-            'reason': '申请的原因是33',
-            'startTime': '2022-02-03 11:11:11',
-            'endTime': '2022-02-05 11:11:11',
-            'applyTime': '2019-12-05 11:11:11',
-            'prove': '证明',
-            'type': 'type字段',
-            'auditState': 'auditState字段',
-            'name': '名字字段2'
-        },
-        {'inOutFormId':'4',
-         'learnToWorkId':'92019101004',
-         'reason':'申请的原因是44',
-         'startTime':'2022-03-01 11:11:11',
-         'endTime': '2022-03-05 11:11:11',
-         'applyTime':'2019-12-05 11:11:11',
-         'prove':'证明',
-         'type':'type字段',
-         'auditState':'auditState字段',
-         'name':'名字字段4'}
+        {'applyformId':'2',
+        'learnToWorkId':'000',
+        'reason':'无',
+        'startTime':'',
+        'endTime': '',
+        'applyTime':'无数据 请检查是否出错',
+        'nucleicAcidProof':'核酸结果','phone':'照片','healthCode':'健康码','destination':'目的地',
+'relation':'关系','carNumber':'车牌号','idCard':'身份证号',
+          
+        'auditState':'状态',
+        'realName':'姓名'}
     ]
-  
     },
-  
-    /**
-     * 生命周期函数--监听页面加载
-     */
     onLoad: function (options) {
-        // this.getListInfo()
+         this.getListInfo()
     },
     clickOpen:function(e){
+      console.log(e)
       if(this.data.selected!=e.target.dataset.id)
       //获取设置的id（即inOutFormId）,用以控制详情展示
       this.setData({
@@ -78,43 +54,67 @@ Page({
     },
 getListInfo:function() {
 
-      // this.setData({
-      //       shipName: wx.getStorageSync('account')
-      //     });
-      this.setData({page:1});
+     
       var that = this;
-      wx.showLoading({
-        title: '加载中',
-      })
+      // wx.showLoading({
+      //   title: '加载中',
+      // })
       wx.request({
         //此处用于获取后端数据,这里是根据account去后端查，也可以根据其他的，但是storage中没存其他的，只有accoutn
         url: app.globalData.url_13_Get_SelfHistory,
         method:'POST',
-        data:globalFun.json2Form({
-          learnToWorkId: app.globalData.userInfo.learnToWorkId
-        }),
+        data:{
+          inOutFormId:"",
+          learnToWorkId:app.globalData.learnToWorkId,
+          reason:"",
+          startTime:"",
+          endTime:"",
+          applyTime:"",
+          prove:"",
+          type:"",
+          auditState:""
+        },
         header: {
-          'content-type': 'application/x-www-form-urlencoded' // 小程序post所需要的配置信息
+          'content-type': 'application/json',
+          'token':app.globalData.token // 小程序post所需要的配置信息
         },
         success (res) {
           if(res.data.result=='success'){
-            
+            var listFormatted=res.data.data;
+            console.log('listFormatted-1')
+            console.log(listFormatted)
+             globalFun.base64toImg(listFormatted)
+            console.log('listFormatted-2')
+            console.log(listFormatted)
+            that.setData({
+              list:listFormatted
+            })
+          }
+          else{
+            wx.showToast({
+              title: '错误,尝试联系管理员',
+              icon:'error'
+            })
           }
 
         }
       })
     },
   
-  
+    
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-      if (this.data.list.length != this.total) {
+      if (this.data.pageScoll<5) {
         this.getListInfo();
+        this.setData({
+          pageScoll:this.data.pageScoll+1
+        })
       } else {
         wx.showToast({
           title: '没有更多数据',
+          icon:"none"
         })
       }
     },
