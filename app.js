@@ -33,10 +33,13 @@ App({
     url_02_User_Get:baseRequestUrl+"user/",//获取用户信息 //后接learnToWorkId
     url_11_Apply_Submit_in:baseRequestUrl+"internalApply/add",//提交申请
     url_11_Apply_Submit_ex:baseRequestUrl+'externalApply/add',
-    url_03_User_CarInfo_Get:baseRequestUrl+"user/getAuto",//获取车辆等级信息
-    url_12_Add_Auto:baseRequestUrl+'user/addAuto',
+    url_03_User_CarInfo_Get:baseRequestUrl+"user/auto/",//获取车辆等级信息
+    //附加学工号
+    //url_03_User_CarInfo_Add:baseRequestUrl+"user/auto",//添加车辆信息
+    url_12_Add_Auto:baseRequestUrl+'user/auto',
     url_13_Get_SelfHistory:baseRequestUrl+'internalApply/get',
     url_13_Get_OthersHistory:baseRequestUrl+'externalApply/get',
-    url_14_Password_Update:baseRequestUrl+'user/changePWD'
+    url_14_Password_Update:baseRequestUrl+'user/changePWD/'
+    //后面接学工号
   }
 })

@@ -3,7 +3,7 @@
     <view class="topContainer">
         <view catchtap="showBcgImgArea">
             <image mode="aspectFit" class="userinfo-avatar" mode="aspectFill" src="{{localImgUrl}}"></image>
-            <image mode="aspectFit" class="userinfo-avatar" mode="aspectFill" src="{{photo}}"></image>
+            
         </view>
     </view>
     

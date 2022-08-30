@@ -16,7 +16,7 @@
   </view>
 </view>
 
-<view class="banner" >
+<view wx:if="{{staff}}" class="banner" >
   <view class="topContainer" bindtap="bindCar">
     <text>申请绑定车辆信息</text>   
   </view>

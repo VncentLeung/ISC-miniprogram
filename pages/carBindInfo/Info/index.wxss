@@ -18,3 +18,9 @@ page{
   color: rgb(63, 63, 63);
   font-size: 1.5rem;
 }
+
+.list-item{
+  display : flex;
+  justify-content : space-between;
+  width: 100%;
+}

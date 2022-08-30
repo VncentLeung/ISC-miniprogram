@@ -41,7 +41,8 @@ Page({
 },
   formSubmit(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    if(this.isCarLicense(e.detail.value.input))
+    // if(this.isCarLicense(e.detail.value.input))
+    if(true)
       this.bindRequest(e.detail.value.input)
     else{
       wx.showToast({
@@ -55,29 +56,41 @@ Page({
     wx.request({
       url: app.globalData.url_12_Add_Auto,
       method:'POST',
-      data:globalFun.json2Form({
-        learnToWorkId: app.globalData.userInfo.learnToWorkId,
-        carNumber:num
-      }),
+      data:{
+        learnToWorkId:app.globalData.learnToWorkId,
+        carNumber:this.data.carNum
+      },
       header: {
-        'content-type': 'application/x-www-form-urlencoded' // 小程序post所需要的配置信息
+        'content-type': 'application/json',
+        'token': app.globalData.token// 小程序post所需要的配置信息
       },
       success:function(res){
         if(res.data.result=='success'){
-          wx.showToast({
-            title: '申请成功',
-          })
+        
+          //持续显示
+          setTimeout(() => {
+            wx.showToast({
+              title: '提交成功',
+              icon: "success",
+            });
+            setTimeout(() => {
+              wx.hideToast();
+            }, 2000)
+          }, 0);
+      
 
           setTimeout(
             function(){
               wx.navigateBack({ delta: 1 // 返回上一级页面。 
               })
-          },1000)
+          },0)
         }
         else{
-          wx.showToast({
-            title: '申请失败，请检查车牌号是否正确',
-            icon:'error'
+          wx.showModal({
+            cancelColor: 'cancelColor',
+            title:"申请失败",
+            content:res.data.message
+
           })
         }
         }

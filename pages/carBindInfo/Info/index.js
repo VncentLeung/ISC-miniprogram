@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    numlist:'暂未绑定车辆信息'
+    list:'暂未绑定车辆信息'
   },
 
   /**
@@ -20,20 +20,19 @@ Page({
   initPage:function(){
     var that=this
     wx.request({
-      url: app.globalData.url_03_User_CarInfo_Get,
-      method:'POST',
-      data:globalFun.json2Form({
-        learnToWorkId: app.globalData.userInfo.learnToWorkId
-      }),
+      url: app.globalData.url_03_User_CarInfo_Get+app.globalData.learnToWorkId,
+      method:'GET',
+      data:[],
       header: {
-        'content-type': 'application/x-www-form-urlencoded' // 小程序post所需要的配置信息
+        'content-type': 'application/json',
+        'token': app.globalData.token // 小程序post所需要的配置信息
       },
       success:res=>{
         if(res.data.result=='success'){
           console.log('获取信息成功');
           console.log(JSON.stringify(res.data))
           that.setData({
-          numlist:res.data.data
+          list:res.data.data
         })
         }
         else {

@@ -2,7 +2,14 @@
 
 <view >
   <view></view>
-  <view class="carInfoList" wx:for="{{numlist}}">
-    牌照<view class="num">{{item}}</view>
+  <view class="carInfoList" wx:for="{{list}}">
+  <view class="list-item">
+  <view>牌照<view  class="num">{{item.carNumber}}</view>
+  </view>
+  <view>状态<view class="num">{{item.state}}</view>
+  </view>
+   </view>
+ 
+   
   </view>
 </view>
