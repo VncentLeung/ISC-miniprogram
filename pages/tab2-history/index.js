@@ -10,7 +10,7 @@ Page({
 
    myhistory: function(res){
        wx.navigateTo({
-         url: '../myhistory/myhistory',
+         url: '/pages/tab2-history/myhistory/myhistory',
        })
    },
 

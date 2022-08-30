@@ -8,14 +8,15 @@
     "pages/tab3-myspace/index","pages/tab3-myspace/updatepassword/updatepassword",
     "pages/tab3-myspace/myinformation/myinformation",
     "pages/tab2-history/index",
+    "pages/historySelf/index",
+    "pages/historyOthers/index",
     "pages/bindcar/bindcar",
     
     
     "pages/applyOut/out",
     "pages/applyIn/in",
     "pages/logs/logs",
-    "pages/historySelf/index",
-    "pages/historyOthers/index",
+    
   
     "pages/carBindInfo/index",
     "pages/carBindInfo/Bind/index"
