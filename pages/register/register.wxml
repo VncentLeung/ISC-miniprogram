@@ -23,7 +23,7 @@
       </view>
 
       <view>
-        <button class='weui-btn' type='primary' formType='submit'>登录</button>
+        <button class='weui-btn' type='primary' formType='submit'>登录并绑定微信</button>
       </view>
     </form>
 

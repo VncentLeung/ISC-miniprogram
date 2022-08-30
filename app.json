@@ -1,26 +1,25 @@
 {
   "pages": [
-    "pages/tab1-operation/index",
-    "pages/selectlogin/selectlogin",
+    "pages/selectlogin/selectlogin","pages/tab1-operation/index",
+    
     "pages/registerbywechat/registerbywechat",
     "pages/register/register",
     "pages/forgetpassword/forgetpassword",
-    "pages/tab3-myspace/index",
+    "pages/tab3-myspace/index","pages/tab3-myspace/updatepassword/updatepassword",
+    "pages/tab3-myspace/myinformation/myinformation",
     "pages/tab2-history/index",
+    "pages/tab2-history/historySelf/index",
+    "pages/tab2-history/historyOthers/index",
     "pages/bindcar/bindcar",
-    "pages/updatepassword/updatepassword",
-    "pages/myinformation/myinformation",
+    
+    
     "pages/applyOut/out",
     "pages/applyIn/in",
     "pages/logs/logs",
-    "pages/historySelf/index",
-    "pages/historyOthers/index",
-    "pages/bindcar/carList/index",
-    "pages/bindcar/carApply/index",
-    "pages/carInfoBinding/index",
+    
+  
     "pages/carBindInfo/index",
-    "pages/carBindInfo/Bind/index",
-    "pages/carBindInfo/Info/index"
+    "pages/carBindInfo/Bind/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

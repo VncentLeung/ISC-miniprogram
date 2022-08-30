@@ -1,7 +1,0 @@
-<!--pages/bindcar/carList/index.wxml-->
-<text>pages/bindcar/carList/index.wxml</text>
-<view class="container">
-<view class="carInfoList" wx:for="{{numlist}}" >
-牌照<view class="num">{{item}}</view>
-</view>
-</view>

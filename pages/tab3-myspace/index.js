@@ -7,13 +7,13 @@ Page({
     
     updatePassword: function(res){
         wx.navigateTo({
-          url: '../updatepassword/updatepassword',
+          url: '/pages/tab3-myspace/updatepassword/updatepassword',
         })
     },
 
     myinformation: function(res){
       wx.navigateTo({
-        url: '../myinformation/myinformation',
+        url: '/pages/tab3-myspace/myinformation/myinformation',
       })
     }
 })

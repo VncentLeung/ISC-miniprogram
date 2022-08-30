@@ -1,20 +1,58 @@
-// pages/carBindInfo/index.js
+// pages/carBindInfo/Info/index.js
+const app=getApp()
+var globalFun = require('../../utils/util').default;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:'暂未绑定车辆信息'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.initPage()
   },
 
+  carNumOperate:function(e){
+    console.log(e)
+    wx.navigateTo({
+      url: '/pages/carBindInfo/Bind/index?operation=edit_or_delete&carNumber='+e.currentTarget.dataset.id,
+    })
+  },
+  carNumAdd:function (params) {
+    wx.navigateTo({
+      url: '/pages/carBindInfo/Bind/index?operation=add'
+    })
+  },
+  initPage:function(){
+    var that=this
+    wx.request({
+      url: app.globalData.url_03_User_CarInfo_Get+app.globalData.learnToWorkId,
+      method:'GET',
+      data:[],
+      header: {
+        'content-type': 'application/json',
+        'token': app.globalData.token // 小程序post所需要的配置信息
+      },
+      success:res=>{
+        if(res.data.result=='success'){
+          console.log('获取信息成功');
+          console.log(JSON.stringify(res.data))
+          that.setData({
+          list:res.data.data
+        })
+        }
+        else {
+         console.log(JSON.stringify(res)) 
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -62,16 +100,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  info:function(){
-    wx.navigateTo({
-      url: '/pages/carBindInfo/Info/index',
-    })
-  }
-  ,
-  bind:function(){
-    wx.navigateTo({
-      url: '/pages/carBindInfo/Bind/index',
-    })
   }
 })

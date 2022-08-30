@@ -1,0 +1,80 @@
+<!--pages/historyOthers/index.wxml-->
+
+
+<view wx:for="{{list}}" wx:for-item="item" wx:key="applyFormId">
+  <view data-id="{{item.applyFormId}}" catchtap="clickOpen" class="list-title">
+    <view wx:if="{{false}}">{{item.applyFormId}}</view>
+    <view>{{item.applyTime}}</view>
+    <view>  {{item.auditState}} 
+      <image style="margin: auto 0.6rem auto auto;" wx:if="{{item.applyFormId == selected}}" class="more" src="/images/arrow.svg"></image>
+      <image style="margin: auto 0.6rem auto auto;" wx:else class="less" src="/images/arrow.svg"></image>
+    </view>
+  </view>
+
+  <view wx:if="{{item.applyFormId== selected }}">
+    <view class="list-item">
+      <view>入校人</view>
+      <view>{{item.realName}} </view>
+    </view>
+    <view class="list-item">
+      <view>原因</view>
+      <view>{{item.reason}}</view>
+    </view>
+
+    <view class="list-item">
+      <view>目的地</view>
+      <view>{{item.destination}}</view>
+    </view>
+
+    <view class="list-item">
+      <view>手机号</view>
+      <view>{{item.phone}}</view>
+    </view>
+
+    <view class="list-item">
+      <view>车辆牌照</view>
+      <view>
+        <view wx:if="{{item.carNumber}}==''">{{item.carNumber}}</view>
+        <view wx:else="">无</view>
+      </view>
+    </view>
+
+    <view class="list-item">
+      <view>起始时间</view>
+      <view>{{item.startTime}}</view>
+    </view>
+    <view class="list-item">
+      <view>结束时间</view>
+      <view>{{item.endTime}}</view>
+    </view>
+
+  <!-- <view class="list-item">
+    <view>审批状态</view>
+    <view>{{item.auditState}} </view>
+  </view> -->
+  <view class="list-item">
+    <view>健康码</view>
+    <view>
+      <image mode="aspectFit" wx:if="{{item.healthCode}}" style="width: 400rpx;" src="{{item.healthCode}}"></image>
+      <view wx:else>无</view>
+    </view>
+  </view>
+
+  <view class="list-item">
+    <view>人脸照片</view>
+    <view>
+      <image mode="aspectFit" wx:if="{{item.photo}}" style="width: 400rpx;" src="{{item.photo}}"></image>
+      <view wx:else>无</view>
+    </view>
+  </view>
+
+  <view class="list-item">
+    <view>核酸证明</view>
+    <view>
+      <image mode="aspectFit" wx:if="{{item.nucleicAcidProof}}" style="width: 400rpx;" src="{{item.nucleicAcidProof}}"></image>
+      <view wx:else>无</view>
+    </view>
+  </view>
+
+</view>
+</view>

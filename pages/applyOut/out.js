@@ -29,7 +29,7 @@ Page({
         filePath:img_url,
         encoding:"base64",
         success:(res)=>{
-             img64='data:image/png;base64,' + res.data
+             img64='data:image/jpeg;base64,' + res.data
              console.log(img64)  
             
              //这里有问题2
@@ -118,27 +118,29 @@ Page({
         //问题处
         // let formattedProve= this.imgToBase64(this.data.prove)
         let formattedProve= wx.getFileSystemManager().readFileSync(this.data.prove,'base64')
-        formattedProve='data:image/png;base64,'+formattedProve
+        formattedProve='data:image/jpeg;base64,'+formattedProve
         console.log('_调试：formattedProve'+formattedProve)
          wx.request({
         url: app.globalData.url_11_Apply_Submit_in,
         method:'POST',
-        data:globalFun.json2Form({
+        data:{
           learnToWorkId: this.data.learnToWorkId,
-       
           reason:this.data.reason,
           prove:formattedProve,
           startTime:formattedTime1,
-          endTime:formattedTime2
-        }),
+          endTime:formattedTime2,
+          flag:false,
+          type:"出校"
+        },
         header: {
-          'content-type': 'application/x-www-form-urlencoded' // 小程序post所需要的配置信息
+          'content-type': 'application/json',
+            'token': app.globalData.token // 小程序post所需要的配置信息
         },
         success(res){
           console.log(JSON.stringify(res.data))
           if(res.data.result=='success'){
             wx.showToast({
-              title: '提交成功',
+              title: '申请成功',
               icon: "success",
             })
             setTimeout(() => {

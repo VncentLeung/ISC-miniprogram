@@ -8,17 +8,17 @@ Page({
 
     },
 
-   myhistory: function(res){
-       wx.navigateTo({
-         url: '../myhistory/myhistory',
-       })
-   },
+  //  myhistory: function(res){
+  //      wx.navigateTo({
+  //        url: '/pages/tab2-history/myhistory/myhistory',
+  //      })
+  //  },
 
-   herhistory: function(res){
-       wx.navigateTo({
-         url: '../herhistory/herhitory',
-       })
-   },
+  //  herhistory: function(res){
+  //      wx.navigateTo({
+  //        url: '../herhistory/herhitory',
+  //      })
+  //  },
     /**
      * 生命周期函数--监听页面加载
      */

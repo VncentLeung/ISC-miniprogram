@@ -1,10 +1,10 @@
 <!--pages/dating/dating.wxml-->
 <view class="banner" >
-  <navigator url="../historySelf/index" hover-class="navigator-hover">为自己申请历史</navigator>
+  <navigator  url="../../pages/tab2-history/historySelf/index" hover-class="navigator-hover">为自己申请历史</navigator>
   </view>
  
 <view class="banner" >
-  <navigator url="../historyOthers/index" hover-class="navigator-hover">为他人申请历史</navigator>
+  <navigator url="../../pages/tab2-history/historyOthers/index" hover-class="navigator-hover">为他人申请历史</navigator>
 </view>
 
 

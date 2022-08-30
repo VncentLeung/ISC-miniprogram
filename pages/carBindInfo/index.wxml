@@ -1,12 +1,15 @@
-<!--pages/carBindInfo/index.wxml-->
-  <view class="center-css">
-    <view class="button-css1" bindtap="info">
-      <view class="text-big">已绑车辆</view>
-      <view class="text-small">查看现已登记绑定的车辆牌照</view>
-    </view>
-    <view class="button-css2" bindtap="bind">
-      <view class="text-big">
-       新增绑定 </view> 
-      <view class="text-small">申请绑定新的车辆</view>
+<!--pages/carBindInfo/Info/index.wxml-->
+
+<view>
+  
+  <view class="carInfoList" wx:for="{{list}}" >
+    <view catchtap="carNumOperate" data-id="{{item.carNumber}}" class="list-item">
+      <view>牌照<view class="num">{{item.carNumber}}</view>
+      </view>
+      <view>状态<view class="num">{{item.state}} ></view>
+      </view>
     </view>
   </view>
+  <view bindtap="carNumAdd" class="tab">+</view>
+
+</view>

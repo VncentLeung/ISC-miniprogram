@@ -1,6 +1,6 @@
 const app=getApp();
-var globalFun = require('../../utils/util').default;
-
+var globalFun = require('../../../utils/util').default;
+var md5Fun=require('../../../utils/md5')
 Page({
 
     data: {
@@ -30,8 +30,13 @@ Page({
         })
         console.log(this.data.repassword)
     },
-  
+
+toMD5:function(str){
+  return md5Fun.hexMd5(str + md5Fun.getKey())
+},
+
 formSubmit: function (e) {
+    var that=this
       console.log(e)
       //获取旧密码
       var oldpassword=e.detail.value.oldpassword;
@@ -39,7 +44,8 @@ formSubmit: function (e) {
       var newpassword=e.detail.value.newpassword;
       //获取再次输入的密码
       var repassword = e.detail.value.repassword
-  
+      console.log('旧密码'+oldpassword)
+      console.log('新密码'+newpassword)
       if(repassword==newpassword)
       wx.showModal({
         cancelColor: 'cancelColor',
@@ -48,22 +54,32 @@ formSubmit: function (e) {
         success (res) {
             if (res.confirm) {
               console.log("用户选择确认")
+              newpassword=that.toMD5(newpassword)
+              oldpassword=that.toMD5(oldpassword)
               wx.request({
-                url: app.globalData.url_14_Password_Update+'/'+app.globalData.userInfo.learnToWorkId,
+                url: app.globalData.url_14_Password_Update+app.globalData.learnToWorkId,
                 method:'PUT',
-                data:globalFun.json2Form({
+                data:{
                   oldPWD:oldpassword,
                   newPWD:newpassword
-                }),
+                },
                 header: {
-                  'content-type': 'application/json'//_问题1 这里可能会有错
+                  'content-type': 'application/json', 
+                  'token': app.globalData.token//_问题1 这里可能会有错
                 }
                 ,
                 success(res){
                   if(res.data.result=='success'){
                     wx.showToast({
-                      title: '修改成功！',
+                      title: '修改成功',
+                      icon: "success",
                     })
+                    setTimeout(() => {
+                      wx.reLaunch({
+                        url: '../tab3-myspace/index',
+                      })
+                    }, 1000);
+
                   
                   }
                   else
