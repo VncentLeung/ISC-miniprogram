@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "carApply":"../carInfoBinding/carApply/index",
-    "carList":"../carInfoBinding/carList/index"
-  }
-}

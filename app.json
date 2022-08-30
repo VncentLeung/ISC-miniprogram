@@ -15,12 +15,9 @@
     "pages/logs/logs",
     "pages/historySelf/index",
     "pages/historyOthers/index",
-    "pages/bindcar/carList/index",
-    "pages/bindcar/carApply/index",
-    "pages/carInfoBinding/index",
+  
     "pages/carBindInfo/index",
-    "pages/carBindInfo/Bind/index",
-    "pages/carBindInfo/Info/index"
+    "pages/carBindInfo/Bind/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -37,6 +37,7 @@ App({
     //附加学工号
     //url_03_User_CarInfo_Add:baseRequestUrl+"user/auto",//添加车辆信息
     url_12_Add_Auto:baseRequestUrl+'user/auto',
+    url_12_EditDelete_Auto:baseRequestUrl+'user/auto/',
     url_13_Get_SelfHistory:baseRequestUrl+'internalApply/get',
     url_13_Get_OthersHistory:baseRequestUrl+'externalApply/get',
     url_14_Password_Update:baseRequestUrl+'user/changePWD/'
