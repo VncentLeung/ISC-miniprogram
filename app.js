@@ -28,6 +28,7 @@ App({
     // },//_调试-待注释
     openid: "",//可能需要删除
    token:"",
+   url_00_PasswordLogin:baseRequestUrl+"user/token/",//账号密码登录，后接学工号和密码
     url_00_OpenidCheckUser:baseRequestUrl+"user/wechatToken/",//通过Openid获取用户账户
     url_01_Token_Get_LTWid:baseRequestUrl+"user/loginState/",//后接token
     url_02_User_Get:baseRequestUrl+"user/",//获取用户信息 //后接learnToWorkId

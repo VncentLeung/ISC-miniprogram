@@ -48,15 +48,15 @@ Page({
 
   async verify(userInfo, code) {
     //调用封装的同步类，发送同步请求
-    // await Http.asyncRequest(
-    //   `https://api.weixin.qq.com/sns/jscode2session?appid=wx6f99bf2b59706cb7&secret=44d3d3b30820282dd14061b7f0970ecd&js_code=${code}&grant_type=authorization_code`,
-    //   'GET', {},
-    //   res => {
-    //     console.log(res);
-    //     userInfo.openid = res.data.openid
-    //     console.log("我的openid为：" + userInfo.openid);
-    //     wx.setStorageSync('openid', userInfo.openid)
-    //   })
+    await Http.asyncRequest(
+      `https://api.weixin.qq.com/sns/jscode2session?appid=wx6f99bf2b59706cb7&secret=44d3d3b30820282dd14061b7f0970ecd&js_code=${code}&grant_type=authorization_code`,
+      'GET', {},{},
+      res => {
+        console.log(res);
+        userInfo.openid = res.data.openid
+        console.log("我的openid为：" + userInfo.openid);
+        wx.setStorageSync('openid', userInfo.openid)
+      })
 
     await Http.asyncRequest(
       app.globalData.url_00_OpenidCheckUser+code,
@@ -65,6 +65,31 @@ Page({
         console.log('请求1')
         console.log(JSON.stringify(res.data))
         app.globalData.token = res.data.data;
+        if(res.data.result=='fail'){
+          wx.showModal({
+            cancelColor: 'cancelColor',
+            title:'提示',
+            content:'未注册或暂未绑定微信，请先尝试密码登录',
+            success(res){
+              setTimeout(
+                function () {
+                  let pages = getCurrentPages(); //获取小程序页面栈
+                  let beforePage = pages[pages.length - 2]; //获取上个页面的实例对象
+                  // beforePage.setData({ //直接修改上个页面的数据（可通过这种方式直接传递参数）
+                  //   txt: '修改数据了'
+                  // })
+                  // 如果找不到go_update(),可以打印beforePage根据层级调用
+                  console.log(beforePage)
+                  beforePage.initPage();
+    
+                  wx.navigateBack({
+                    delta: 1 // 返回上一级页面。 
+                  })
+                }, 0)
+            }
+          })
+
+        }
       }
     )
     await Http.asyncRequest(
