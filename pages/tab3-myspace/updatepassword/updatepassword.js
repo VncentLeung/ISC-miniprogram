@@ -1,6 +1,6 @@
 const app=getApp();
-var globalFun = require('../../utils/util').default;
-var md5Fun=require('../../utils/md5')
+var globalFun = require('../../../utils/util').default;
+var md5Fun=require('../../../utils/md5')
 Page({
 
     data: {

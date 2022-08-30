@@ -48,16 +48,17 @@ Page({
 
   async verify(userInfo, code) {
     //调用封装的同步类，发送同步请求
-    await Http.asyncRequest(
-      `https://api.weixin.qq.com/sns/jscode2session?appid=wx6f99bf2b59706cb7&secret=44d3d3b30820282dd14061b7f0970ecd&js_code=${code}&grant_type=authorization_code`,
-      'GET', {},{},
-      res => {
-        console.log(res);
-        userInfo.openid = res.data.openid
-        console.log("我的openid为：" + userInfo.openid);
-        wx.setStorageSync('openid', userInfo.openid)
-      })
+    // await Http.asyncRequest(
+    //   `https://api.weixin.qq.com/sns/jscode2session?appid=wx6f99bf2b59706cb7&secret=44d3d3b30820282dd14061b7f0970ecd&js_code=${code}&grant_type=authorization_code`,
+    //   'GET', {},{},
+    //   res => {
+    //     console.log(res);
+    //     userInfo.openid = res.data.openid
+    //     console.log("我的openid为：" + userInfo.openid);
+    //     wx.setStorageSync('openid', userInfo.openid)
+    //   })
 
+    //注意 这里免去了前端请求openid的麻烦了，这里后端直接接受用户code,并且计算openid,再通过openid查找数据库是否存在数据，并且返回token
     await Http.asyncRequest(
       app.globalData.url_00_OpenidCheckUser+code,
       'GET',{},{},

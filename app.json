@@ -5,11 +5,12 @@
     "pages/registerbywechat/registerbywechat",
     "pages/register/register",
     "pages/forgetpassword/forgetpassword",
-    "pages/tab3-myspace/index",
+    "pages/tab3-myspace/index","pages/tab3-myspace/updatepassword/updatepassword",
+    "pages/tab3-myspace/myinformation/myinformation",
     "pages/tab2-history/index",
     "pages/bindcar/bindcar",
-    "pages/updatepassword/updatepassword",
-    "pages/myinformation/myinformation",
+    
+    
     "pages/applyOut/out",
     "pages/applyIn/in",
     "pages/logs/logs",

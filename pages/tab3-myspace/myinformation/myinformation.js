@@ -1,6 +1,6 @@
 // pages/my/my.js
 const app=getApp();
-var globalFun = require('../../utils/util').default;
+var globalFun = require('../../../utils/util').default;
 
 Page({
     data: {
