@@ -18,6 +18,12 @@ Page({
         wx.navigateTo({
           url: '../registerbywechat/registerbywechat',
         })
+    },
+
+    scan: function(res){
+      wx.navigateTo({
+        url: '../scan/index',
+      })
     }
    
 })
