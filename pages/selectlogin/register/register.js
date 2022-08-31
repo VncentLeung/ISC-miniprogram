@@ -1,8 +1,8 @@
-var md5Fun=require('../../utils/md5')
+var md5Fun=require('../../../utils/md5')
 var app=getApp()
 import {
   Http
-} from '../../utils/util.js';
+} from '../../../utils/util.js';
 
 Page({
 
@@ -144,7 +144,7 @@ Page({
   
           setTimeout(() => {
             wx.switchTab({
-              url: '../tab1-operation/index',
+              url: '/pages/tab1-operation/index',
             })
           }, 1000);
         }
