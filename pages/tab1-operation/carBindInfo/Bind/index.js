@@ -1,6 +1,6 @@
 // pages/carBindInfo/Bind/index.js
 const app = getApp();
-var globalFun = require('../../../utils/util').default;
+var globalFun = require('../../../../utils/util').default;
 Page({
 
   /**

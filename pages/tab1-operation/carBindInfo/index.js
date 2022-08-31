@@ -1,6 +1,6 @@
 // pages/carBindInfo/Info/index.js
 const app=getApp()
-var globalFun = require('../../utils/util').default;
+var globalFun = require('../../../utils/util').default;
 
 Page({
 
@@ -21,12 +21,12 @@ Page({
   carNumOperate:function(e){
     console.log(e)
     wx.navigateTo({
-      url: '/pages/carBindInfo/Bind/index?operation=edit_or_delete&carNumber='+e.currentTarget.dataset.id,
+      url: '/pages/tab1-operation/carBindInfo/Bind/index?operation=edit_or_delete&carNumber='+e.currentTarget.dataset.id,
     })
   },
   carNumAdd:function (params) {
     wx.navigateTo({
-      url: '/pages/carBindInfo/Bind/index?operation=add'
+      url: '/pages/tab1-operation/carBindInfo/Bind/index?operation=add'
     })
   },
   initPage:function(){

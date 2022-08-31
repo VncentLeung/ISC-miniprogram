@@ -9,7 +9,7 @@ Page({
   data: {
     //用户基本信息（头像、昵称、电话）
     userinfo: {
-      avatarUrl: '../../images/my.png',
+      avatarUrl: '/images/my.png',
       nickName: '未授权',
     },
     //是否已经获取用户信息

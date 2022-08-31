@@ -1,5 +1,5 @@
 const app = getApp();
-var globalFun = require('../../utils/util').default;
+var globalFun = require('../../../utils/util').default;
 
 Page({
 
@@ -189,15 +189,21 @@ Page({
           success(res) {
             console.log(JSON.stringify(res.data))
             if (res.data.result == 'success') {
-              wx.showToast({
-                title: '提交成功',
-                icon: "success",
-              })
+              //返回上一级
               setTimeout(() => {
-                wx.reLaunch({
-                  url: '../tab1-operation/index',
-                })
-              }, 1000);
+                wx.showToast({
+                  title: '提交成功',
+                  icon: "success",
+                });
+                setTimeout(() => {
+                  wx.hideToast();
+                }, 2000)
+              }, 0);
+              setTimeout(
+                function(){
+                  wx.navigateBack({ delta: 1 // 返回上一级页面。 
+                  })
+              },0)
             } else {
               wx.showModal({
                 title: '申请提示',
@@ -243,15 +249,21 @@ Page({
           success(res) {
             console.log(JSON.stringify(res.data))
             if (res.data.result == 'success') {
-              wx.showToast({
-                title: '提交成功',
-                icon: "success",
-              })
+              //返回上一级
               setTimeout(() => {
-                wx.reLaunch({
-                  url: '../tab1-operation/index',
-                })
-              }, 1000);
+                wx.showToast({
+                  title: '提交成功',
+                  icon: "success",
+                });
+                setTimeout(() => {
+                  wx.hideToast();
+                }, 2000)
+              }, 0);
+              setTimeout(
+                function(){
+                  wx.navigateBack({ delta: 1 // 返回上一级页面。 
+                  })
+              },0)
             } else {
               wx.showModal({
                 title: '申请提示',
@@ -345,7 +357,7 @@ Page({
   // ,
   returnindex: function (res) {
     wx.switchTab({
-      url: '../index/index',
+      url: '/pages/tab1-operation/index',
     })
   }
 

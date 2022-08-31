@@ -11,6 +11,13 @@ Page({
         })
     },
 
+    forgetPassword: function(res){
+      wx.navigateTo({
+        url: '/pages/tab3-myspace/forgetpassword/forgetpassword',
+      })
+  },
+
+
     myinformation: function(res){
       wx.navigateTo({
         url: '/pages/tab3-myspace/myinformation/myinformation',

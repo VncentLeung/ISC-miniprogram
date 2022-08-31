@@ -12,24 +12,24 @@ Page({
   },
 out: function(res){
   wx.navigateTo({
-    url: '../applyOut/out',
+    url: '/pages/tab1-operation/applyOut/out',
   })
 },
 
 inSelf: function(res){
   wx.navigateTo({
-    url: '../applyIn/in?person=self',
+    url: '/pages/tab1-operation/applyIn/in?person=self',
   })
 },
 inOthers: function(res){
   wx.navigateTo({
-    url: '../applyIn/in?person=others',
+    url: '/pages/tab1-operation/applyIn/in?person=others',
   })
 },
 
   bindCar: function(res){
     wx.navigateTo({
-      url: '../carBindInfo/index',
+      url: '/pages/tab1-operation/carBindInfo/index',
     })
   }
 })

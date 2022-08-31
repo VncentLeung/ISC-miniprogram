@@ -1,5 +1,5 @@
 const app=getApp();
-var globalFun = require('../../utils/util').default;
+var globalFun = require('../../../utils/util').default;
 
 Page({
 
@@ -139,15 +139,20 @@ Page({
         success(res){
           console.log(JSON.stringify(res.data))
           if(res.data.result=='success'){
-            wx.showToast({
-              title: '申请成功',
-              icon: "success",
-            })
             setTimeout(() => {
-              wx.reLaunch({
-                url:'../tab1-operation/index',
-              })
-            }, 1000);
+              wx.showToast({
+                title: '提交成功',
+                icon: "success",
+              });
+              setTimeout(() => {
+                wx.hideToast();
+              }, 2000)
+            }, 0);
+            setTimeout(
+              function(){
+                wx.navigateBack({ delta: 1 // 返回上一级页面。 
+                })
+            },0)
           }
           else{
             wx.showModal({

@@ -12,3 +12,9 @@
 </view>
 
 
+<view class="banner" >
+  <view class="topContainer" bindtap="forgetPassword">
+    <text>忘记密码</text>   
+  </view>
+</view>
+

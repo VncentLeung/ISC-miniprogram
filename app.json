@@ -7,23 +7,23 @@
 
 
     "pages/tab1-operation/index",
-    
-   
-    "pages/forgetpassword/forgetpassword",
-    "pages/tab3-myspace/index","pages/tab3-myspace/updatepassword/updatepassword",
-    "pages/tab3-myspace/myinformation/myinformation",
+    "pages/tab1-operation/applyOut/out",
+    "pages/tab1-operation/applyIn/in",
+    "pages/logs/logs",
+    "pages/tab1-operation/carBindInfo/index",
+    "pages/tab1-operation/carBindInfo/Bind/index",
+
+
     "pages/tab2-history/index",
     "pages/tab2-history/historySelf/index",
     "pages/tab2-history/historyOthers/index",
+
+    "pages/tab3-myspace/index",
+    "pages/tab3-myspace/forgetpassword/forgetpassword",
+    "pages/tab3-myspace/updatepassword/updatepassword",
+    "pages/tab3-myspace/myinformation/myinformation"
+
     
-    
-    "pages/applyOut/out",
-    "pages/applyIn/in",
-    "pages/logs/logs",
-    
-  
-    "pages/carBindInfo/index",
-    "pages/carBindInfo/Bind/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,8 +37,7 @@
     "selectedColor": "#9eea6a",
     "borderStyle": "black",
     "backgroundColor": "white",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/tab1-operation/index",
         "iconPath": "/images/unshouye.png",
         "selectedIconPath": "/images/shouye.png",
