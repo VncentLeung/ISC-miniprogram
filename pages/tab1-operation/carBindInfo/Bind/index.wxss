@@ -17,6 +17,7 @@ page{
   border-radius: 20rpx;
 }
 .center-class{
+  /* 对齐中心样式 */
   height: 100%;
   width: 100%;
   display: flex;

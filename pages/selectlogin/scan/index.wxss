@@ -17,3 +17,15 @@
 .usermotto {
   margin-top: 200px;
 }
+page{
+  height: 100%;
+}
+.center-class{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 100%;
+}

@@ -4,17 +4,18 @@ var app = getApp()
 
 Page({
   data: {
-    code: ''
+    code: '',
+    success:true//_调试
   },
   onLoad(){
     var that=this
     wx.login({
       success(res){
-      
        that.setData({
          code:res.code
        })
        console.log(res.code)
+       that.scan()
      }
     })
   },
@@ -41,6 +42,9 @@ Page({
             console.log(res)
             if(res.data.data){
               console.log("已绑定，无需绑定")
+              that.setData({
+                success:true
+              })
               wx.showModal({
                 cancelColor: 'cancelColor',
                 title: '提示',
@@ -48,7 +52,7 @@ Page({
               })
             }
             else{
-              
+
               console.log('未绑定')
               wx.navigateTo({
                 url: '/pages/selectlogin/scan/fail/fail',
