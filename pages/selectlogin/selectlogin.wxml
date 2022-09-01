@@ -1,4 +1,7 @@
 <!--pages/selectlogin/selectlogin.wxml-->
+<view class="first-background">
+
+</view>
 <view class="banner" >
   <view class="topContainer" bindtap="registerbywechat">
      <text>微信登录</text>   

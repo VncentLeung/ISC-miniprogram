@@ -2,6 +2,7 @@
   "pages": [
     "pages/selectlogin/selectlogin",
     "pages/selectlogin/scan/index",
+    "pages/selectlogin/scan/fail/fail",
     "pages/selectlogin/register/register",
     "pages/selectlogin/registerbywechat/registerbywechat",
 

@@ -1,5 +1,5 @@
 // app.js
-var  baseRequestUrl="http://127.0.0.1:9090/"
+var  baseRequestUrl="http://192.168.1.109:9090/"
 App({
   onLaunch() {
     // 展示本地存储能力
@@ -29,8 +29,12 @@ App({
     openid: "",//可能需要删除
    token:"",
   //  url_00_PasswordLogin:baseRequestUrl+"user/token/",//账号密码登录，后接学工号和密码
-    url_00_OpenidCheckUser:baseRequestUrl+"user/wechatToken/",//通过传递code获取用户openid,并登录、关联账户
-    url_01_Token_Get_LTWid:baseRequestUrl+"user/loginState/",//后接token
+    url_00_OpenidCheckUser:baseRequestUrl+"user/wechatToken/",
+    //通过传递code获取用户openid,并登录、关联账户
+    url_00_Scan_Login:baseRequestUrl+"user/codeLogin",
+
+    url_01_Token_Get_LTWid:baseRequestUrl+"user/wechatInfo/",//后接token
+  
     url_02_User_Get:baseRequestUrl+"user/",//获取用户信息 //后接learnToWorkId
     url_11_Apply_Submit_in:baseRequestUrl+"internalApply",//提交申请
     url_11_Apply_Submit_ex:baseRequestUrl+'externalApply',
@@ -43,5 +47,7 @@ App({
     url_13_Get_OthersHistory:baseRequestUrl+'externalApply/get',
     url_14_Password_Update:baseRequestUrl+'user/changePWD/'
     //后面接学工号
+
+    
   }
 })

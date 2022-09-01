@@ -1,6 +1,6 @@
 // index.js
 // 获取应用实例
-const app = getApp()
+var app = getApp()
 
 Page({
   data: {
@@ -10,7 +10,7 @@ Page({
     var that=this
     wx.login({
       success(res){
-        wx.setStorageSync('code3', res.code)
+      
        that.setData({
          code:res.code
        })
@@ -19,21 +19,23 @@ Page({
     })
   },
   scan:function(e){
+    var that=this
     wx.scanCode({
       onlyFromCamera: false,
       success(res){
         console.log(res)
         var token=res.result
-        var code=wx.getStorageSync('code3')
-        wx.setStorageSync('token', token) 
+        app.globalData.token=token
+        //第一次存放token
+        // wx.setStorageSync('token', token) 
         console.log(token)
-        console.log(code)
+        console.log('第二次输出：code'+that.data.code)
         wx.request({
-          url: 'http://192.168.1.109:9090/user/codeLogin',
+          url: app.globalData.url_00_Scan_Login,
           method:"POST",
           data:{
                token: token,
-               code: code
+               code: that.data.code
           },
           success: function(res){
             console.log(res)
@@ -46,9 +48,11 @@ Page({
               })
             }
             else{
+              
               console.log('未绑定')
               wx.navigateTo({
-                url: '../scan/fail/fail',
+                url: '/pages/selectlogin/scan/fail/fail',
+                
               })
             }
           },

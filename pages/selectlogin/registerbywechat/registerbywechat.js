@@ -97,7 +97,7 @@ Page({
       app.globalData.url_01_Token_Get_LTWid+app.globalData.token,
       'GET',{},{},
       res=>{
-        console.log('请求2')
+        console.log('请求2-通过token获取学工号')
         console.log(JSON.stringify(res.data))
         app.globalData.learnToWorkId = res.data.data;
       }
@@ -106,7 +106,7 @@ Page({
       app.globalData.url_02_User_Get+app.globalData.learnToWorkId,
       'GET',{},{'token': app.globalData.token},
       res=>{
-        console.log('请求3')
+        console.log('请求3-通过学工号、配合token获取用户信息')
         console.log(JSON.stringify(res.data))
         app.globalData.userInfo = res.data.data;
         app.globalData.userInfo.learnToWorkId=app.globalData.learnToWorkId
