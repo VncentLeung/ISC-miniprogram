@@ -9,7 +9,8 @@ Page({
     data: {
         account: "",
         password: "",
-        code:''
+        code:'',
+        success:false
       },
       onLoad(){
         var that=this
@@ -68,7 +69,7 @@ Page({
                     wx.hideToast();
                   }, 2000)
                 }, 0);
-               
+                
                }
            }
          })

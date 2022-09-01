@@ -74,28 +74,34 @@ const base64toImg = function (obj) {
 
     if (obj[i].hasOwnProperty('photo'))
       if (obj[i].photo) {
-        var base64 = "data:image/jpg;base64," + obj[i].photo;
-        var imgPath = wx.env.USER_DATA_PATH + '/e-invoice' + Date.parse(new Date()) + Math.random() + '.jpg';
-        var imageData = base64.replace(/^data:image\/\w+;base64,/, "");
-        var fs = wx.getFileSystemManager();
-        fs.writeFileSync(imgPath, imageData, "base64");
-        fs.close();
-        obj[i].photo = imgPath
-        console.log(imgPath)
-      };
+        // obj[i].photo=obj[i].photo.replace(/[\r\n]/g, '')
+        obj[i].photo = "data:image/jpeg;base64," + obj[i].photo.replace(/[\r\n]/g, '')
+      }
+        // obj[i].photo = "data:image/jpeg;base64," + obj[i].photo.replace(/[\r\n]/g, '')
+      ;
+    ;
+    
+    
     if (obj[i].hasOwnProperty('prove'))
       if (obj[i].prove)
+      {
+        // obj[i].prove= obj[i].prove.replace(/[\r\n]/g, '')
         obj[i].prove = "data:image/jpeg;base64," + obj[i].prove.replace(/[\r\n]/g, '')
-        ;
-        ;
+      }
+        // obj[i].prove = "data:image/jpeg;base64," + obj[i].prove.replace(/[\r\n]/g, '')
+      ;
+    ;
+
     if (obj[i].hasOwnProperty('nucleicAcidProof'))
       if (obj[i].nucleicAcidProof)
         obj[i].nucleicAcidProof = "data:image/jpeg;base64," + obj[i].nucleicAcidProof.replace(/[\r\n]/g, '')
-        ;
       ;
+    ;
+
     if (obj[i].hasOwnProperty('healthCode'))
       if (obj[i].healthCode)
-        obj[i].healthCode = "data:image/jpeg;base64," + obj[i].healthCode.replace(/[\r\n]/g, '')
+        obj[i].healthCode = "data:image/jpeg;base64,"+obj[i].healthCode.replace(/[\r\n]/g, '')
+        // + obj[i].healthCode.replace(/[\r\n]/g, '')
       ;
     ;
 

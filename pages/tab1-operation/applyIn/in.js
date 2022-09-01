@@ -28,26 +28,26 @@ Page({
     console.log('申请对象：' + options.person)
     this.changeView(options.person)
   },
-  imgBase64: function (img_url) {
-    let res = wx.getFileSystemManager().readFileSync(img_url, 'base64')
-    console.log("输出base64", res.data)
+  // imgBase64: function (img_url) {
+  //   let res = wx.getFileSystemManager().readFileSync(img_url, 'base64')
+  //   console.log("输出base64", res.data)
 
-    return 'data:image/jpeg;base64,' + res.data
-  },
-  imgToBase64: function (img_url) {
+  //   return 'data:image/jpeg;base64,' + res.data
+  // },
+  // imgToBase64: function (img_url) {
 
-    wx.getFileSystemManager().readFileSync({
-      filePath: img_url,
-      encoding: "base64",
-      success: (res) => {
-        img64 = 'data:image/jpeg;base64,' + res.data
-        console.log(img64)
+  //   wx.getFileSystemManager().readFileSync({
+  //     filePath: img_url,
+  //     encoding: "base64",
+  //     success: (res) => {
+  //       img64 = 'data:image/jpeg;base64,' + res.data
+  //       console.log(img64)
 
 
-      }
-    })
-    return img64;
-  },
+  //     }
+  //   })
+  //   return img64;
+  // },
   bindDate1Change: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
@@ -113,6 +113,19 @@ Page({
     })
   },
 
+  async  imgToBase64(img) {
+    return new Promise(function (resolve, reject) {
+      const reader = new FileReader()
+      reader.readAsDataURL(img.raw)
+      reader.onload = (e) => {
+        const result = String(e.target.result).replace(
+          'data:image/jpeg;base64,',
+          ''
+        )
+        resolve(result)
+      }
+    })
+  },
 
   verifyForm: function (that) {
 
@@ -152,18 +165,24 @@ Page({
 
       if (that.data.selfOrOthersApply) {
         formattedProve = wx.getFileSystemManager().readFileSync(this.data.prove, 'base64')
-        formattedProve = 'data:image/jpeg;base64,' + formattedProve
+        // formattedProve = 'data:image/jpeg;base64,' + formattedProve
+        //_错误1
         console.log('_调试：formattedProve' + formattedProve)
       } else {
         formattedPhoto = wx.getFileSystemManager().readFileSync(this.data.photo, 'base64')
-        formattedPhoto = 'data:image/jpeg;base64,' + formattedPhoto
+        // formattedPhoto = 'data:image/jpeg;base64,' + formattedPhoto
+        // _错误1
         if (this.data.healthCode != '') {
           formattedhealthCode = wx.getFileSystemManager().readFileSync(this.data.healthCode, 'base64')
-          formattedhealthCode = 'data:image/jpeg;base64,' + formattedhealthCode
+          // 
+          // formattedhealthCode = 'data:image/jpeg;base64,' + formattedhealthCode
         }
         if (this.data.nucleicAcidProof != '') {
+
+         
+
           formattednucleicAcidProof = wx.getFileSystemManager().readFileSync(this.data.nucleicAcidProof, 'base64')
-          formattednucleicAcidProof = 'data:image/jpeg;base64,' + formattednucleicAcidProof
+          // formattednucleicAcidProof = 'data:image/jpeg;base64,' + formattednucleicAcidProof
         }
       }
 
@@ -179,7 +198,7 @@ Page({
             prove: formattedProve,
             startTime: formattedTime1,
             endTime: formattedTime2,
-            flag:true,
+            flag:false,
             type:"入校"
           },
           header: {

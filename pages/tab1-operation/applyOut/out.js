@@ -118,7 +118,7 @@ Page({
         //问题处
         // let formattedProve= this.imgToBase64(this.data.prove)
         let formattedProve= wx.getFileSystemManager().readFileSync(this.data.prove,'base64')
-        formattedProve='data:image/jpeg;base64,'+formattedProve
+        // formattedProve='data:image/jpeg;base64,'+formattedProve
         console.log('_调试：formattedProve'+formattedProve)
          wx.request({
         url: app.globalData.url_11_Apply_Submit_in,

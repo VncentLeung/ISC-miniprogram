@@ -95,7 +95,7 @@ Page({
           var listFormatted = res.data.data;
           console.log('listFormatted-1')
           console.log(listFormatted)
-          globalFun.base64toImg(listFormatted)
+           globalFun.base64toImg(listFormatted)
           console.log('listFormatted-2')
           console.log(listFormatted)
           that.setData({

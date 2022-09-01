@@ -5,7 +5,7 @@ var app = getApp()
 Page({
   data: {
     code: '',
-    success:true//_调试
+    success:false//_调试完成
   },
   onLoad(){
     var that=this
