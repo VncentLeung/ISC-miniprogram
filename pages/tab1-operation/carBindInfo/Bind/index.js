@@ -59,8 +59,8 @@ Page({
   },
   formSubmit(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    // if(this.isCarLicense(e.detail.value.input))
-    if (true)
+    if(this.isCarLicense(e.detail.value.input))
+    // if (true)
       this.bindRequest(e.detail.value.input)
     else {
       wx.showToast({
