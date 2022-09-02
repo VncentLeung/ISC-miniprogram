@@ -127,6 +127,8 @@ Page({
     })
   },
 
+
+
   verifyForm: function (that) {
 
     if (that.data.learnToWorkId == '' || that.data.reason == '' || that.data.startTime == '' || that.data.endTime == '' || !(that.data.prove != '' || that.data.photo != '')) {
@@ -282,7 +284,7 @@ Page({
                 function(){
                   wx.navigateBack({ delta: 1 // 返回上一级页面。 
                   })
-              },0)
+              },2000)
             } else {
               wx.showModal({
                 title: '申请提示',

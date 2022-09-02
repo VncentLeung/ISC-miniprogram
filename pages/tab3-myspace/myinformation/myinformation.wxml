@@ -25,7 +25,7 @@
       <view class='item' bindtap='myRoute'>
         <text class="it" space="emsp">学院:    {{deparName}}</text>
       </view>
-      <text class="logout" bindtap="logout">退出登录</text>
+      <text class="logout" bindtap="Scan">扫一扫</text>
     </view>
     <view class="usermotto">
       <text class="yu"> </text>

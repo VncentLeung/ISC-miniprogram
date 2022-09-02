@@ -109,7 +109,15 @@ Page({
         console.log('请求3-通过学工号、配合token获取用户信息')
         console.log(JSON.stringify(res.data))
         app.globalData.userInfo = res.data.data;
+        //此刻用户信息已经存放
         app.globalData.userInfo.learnToWorkId=app.globalData.learnToWorkId
+
+        //可能暂时不用到_做一个用户信息setStorage存储信息
+        wx.setStorage({
+          data:app.globalData.userInfo,
+          key:'userInfo'
+        })
+
         console.log(app.globalData.userInfo)
         setTimeout(() => {
           wx.showToast({

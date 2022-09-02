@@ -18,7 +18,8 @@ Page({
     })
     if (options.operation == 'edit_or_delete') {
       this.setData({
-        carNum: options.carNumber
+        carNum: options.carNumber,
+        newCarNum:options.carNumber
       })
     }
   },
@@ -159,7 +160,7 @@ Page({
   },
   deleteSubmitButton: function () {
     var that = this;
-    if (this.data.carNum != this.data.newCarNum)
+   
       wx.showModal({
         cancelColor: 'cancelColor',
         title: '提示',
@@ -223,13 +224,7 @@ Page({
           }
         }
       })
-    else {
-      wx.showModal({
-        cancelColor: 'cancelColor',
-        title: '提示',
-        content: '两次新密码不一致，请检查输入'
-      })
-    }
+   
   },
   bindRequest: function (num) {
 
