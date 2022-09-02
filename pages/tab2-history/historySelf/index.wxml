@@ -34,7 +34,7 @@
 
   </view>
 </view> -->
-<view wx:for="{{list}}" wx:for-item="item" wx:key="inOutFormId">
+<view class='total-list' wx:for="{{list}}" wx:for-item="item" wx:key="inOutFormId">
   <view data-id="{{item.inOutFormId}}" catchtap="clickOpen" class="list-title">
     <view wx:if="{{false}}">{{item.inOutFormId}}</view>
     <view>{{item.applyTime}}</view>
@@ -43,7 +43,7 @@
     </view>
   </view>
 
-  <view wx:if="{{item.inOutFormId== selected }}">
+  <view class='one-list' wx:if="{{item.inOutFormId== selected }}">
     <view class="list-item">
       <view>学工号</view>
       <view>{{item.learnToWorkId}} </view>

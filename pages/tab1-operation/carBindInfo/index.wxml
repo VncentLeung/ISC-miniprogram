@@ -6,7 +6,7 @@
     <view catchtap="carNumOperate" data-id="{{item.carNumber}}" class="list-item">
       <view>牌照<view class="num">{{item.carNumber}}</view>
       </view>
-      <view>状态<view class="num">{{item.state}} ></view>
+      <view>状态<view class="num">{{item.state}} </view>
       </view>
     </view>
   </view>

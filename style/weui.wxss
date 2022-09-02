@@ -99,8 +99,12 @@ icon {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   flex: 1;
-}
 
+}
+.weui-cell__bd:before {
+  content: '* ';
+  color: red;
+}
 .weui-cell__ft {
   text-align: right;
   color: #999;
