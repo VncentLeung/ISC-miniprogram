@@ -9,7 +9,7 @@ Page({
   data: {
     //用户基本信息（头像、昵称、电话）
     userinfo: {
-      avatarUrl: '/images/my.png',
+      avatarUrl: '',
       nickName: '未授权',
     },
     //是否已经获取用户信息
@@ -27,23 +27,53 @@ Page({
       success: (res) => {
         console.log(res);
         // 把你的用户信息存到一个变量中方便下面使用
-        let userInfo = res.userInfo
+        this.setData({
+            userinfo : res.userInfo
+        })
+        
         //获取openId（需要code来换取）这是用户的唯一标识符
         // 获取code值
+        // wx.login({
+        //   //成功放回
+        //   success: (res) => {
+        //     console.log(res);
+        //     let code = res.code
+
+        //     //对openid等进行验证
+        //     this.verify(userInfo, code)
+        //   }
+        // })
+
+      }
+    })
+
+  },
+
+  getUserProfile(e) {
+    console.log('运行了这个')
+    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
+    // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+    wx.getUserProfile({
+      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          userinfo:res.userInfo
+        })
         wx.login({
           //成功放回
           success: (res) => {
             console.log(res);
             let code = res.code
-
+            
             //对openid等进行验证
-            this.verify(userInfo, code)
+            
+            this.verify(this.data.userInfo, code)
           }
         })
-
+        console.log('授权成功了')
       }
     })
-
   },
 
   async verify(userInfo, code) {

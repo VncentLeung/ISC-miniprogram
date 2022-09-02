@@ -27,7 +27,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#87CEFA",
+    "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "贵州大学校园智能门禁",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
@@ -39,20 +39,20 @@
     "backgroundColor": "white",
     "list": [{
         "pagePath": "pages/tab1-operation/index",
-        "iconPath": "/images/unshouye.png",
-        "selectedIconPath": "/images/shouye.png",
+        "iconPath": "/images/application-0.png",
+        "selectedIconPath": "/images/application-1.png",
         "text": "申请"
       },
       {
         "pagePath": "pages/tab2-history/index",
-        "iconPath": "/images/undating.png",
-        "selectedIconPath": "/images/dating.png",
+        "iconPath": "/images/history-0.png",
+        "selectedIconPath": "/images/history-1.png",
         "text": "申请历史"
       },
       {
         "pagePath": "pages/tab3-myspace/index",
-        "iconPath": "/images/unmy.png",
-        "selectedIconPath": "/images/my.png",
+        "iconPath": "/images/myspace-0.png",
+        "selectedIconPath": "/images/myspace-1.png",
         "text": "个人中心"
       }
     ]
