@@ -22,7 +22,7 @@ page{
     width: 60%;
     height: 370rpx;
     margin: 20rpx auto;
-    background:white;
+    /* background:white; */
     /* background-image:image("../../images/cloudbg.jpg"); */
     text-align: center;
 }
@@ -31,6 +31,7 @@ page{
 }
 .background-img{
   height: 100%;
+  width: 100%;
   position: relative;
   top: 0;
   left: 0;

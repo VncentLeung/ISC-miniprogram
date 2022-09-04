@@ -54,7 +54,7 @@ page{
 }
 .button-1{
   color: white;
-  background-color: #00b26a;
+  background:linear-gradient(30deg,#00b26a ,#25cf8b ) ;
   font-weight: 500;
   letter-spacing: 5rpx;
   font-size: 40rpx;
@@ -65,7 +65,7 @@ page{
   /* border-style: solid;
 border-color: white;
 border-width: 5; */
-  box-shadow: 0 0 4rpx 2rpx#42aec5;
+  box-shadow: 3rpx 3rpx 4rpx #5a7e83;
 }
 .button-2{
   display: flex;
@@ -82,6 +82,8 @@ border-width: 5; */
   width: 290rpx;
   border-radius: 15rpx;
   border-style: 5rpx solid white;
+  box-shadow: 3rpx 3rpx 4rpx #5a7e83;
+
 }
 .background-img{
   /* position: absolute;
@@ -93,11 +95,12 @@ border-width: 5; */
   height: 100%;
   z-index: -999 */
   height: 100%;
-position: relative;
-top: 0;
-left: 0;
-background-size:100% 100%;
-z-index: -1;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-size:100% 100%;
+  z-index: -1;
 }
 .background-img-decoration{
   position: absolute;

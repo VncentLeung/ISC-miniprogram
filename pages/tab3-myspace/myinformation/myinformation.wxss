@@ -6,15 +6,15 @@
     padding: 20rpx 0;
     width: 671rpx;
     display: block;
-    height: 300rpx;
+    height: 200rpx;
     margin: 20rpx auto;
-    background:linear-gradient(109.6deg, rgb(204, 228, 247) 11.2%, rgb(237, 246, 250) 100.2%);
+    /* background:linear-gradient(109.6deg, rgb(204, 228, 247) 11.2%, rgb(237, 246, 250) 100.2%); */
     text-align: center;
 }
  
 .topContainer {
     width: 100%;
-    height: 260rpx;
+    height: 200rpx;
     background-size: 100%;
     border-radius: 9px;
 }
@@ -94,9 +94,9 @@
     width:35vw;
     height:7vh;
     line-height: 40px;
-    background: linear-gradient(to bottom,rgb(29, 168, 233),rgb(217, 121, 226));
+    background: linear-gradient(30deg,rgb(19, 172, 113),rgb(4, 216, 14));
     border-radius: 10px;
-    box-shadow: 0 0 8px #c1c1c1;
+    box-shadow: 6 6 8px #c1c1c1;
     color:#fff;
     text-align: center;
     margin-top: 2vh;

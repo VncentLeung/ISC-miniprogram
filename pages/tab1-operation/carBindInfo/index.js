@@ -8,7 +8,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:'暂未绑定车辆信息'
+    list:[{
+      carNumber:'示例A0000',
+      state:'在校'
+    },{
+      carNumber:'示例B0000',
+      state:'在校'
+    }]
   },
 
   /**

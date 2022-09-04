@@ -152,7 +152,7 @@ Page({
               function(){
                 wx.navigateBack({ delta: 1 // 返回上一级页面。 
                 })
-            },0)
+            },2000)
           }
           else{
             wx.showModal({
@@ -239,7 +239,7 @@ Page({
 // ,
   returnindex: function(res){
       wx.switchTab({
-        url: '../index/index',
+        url: '/pages/tab1-operation/index',
       })
   }
 

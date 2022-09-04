@@ -12,7 +12,11 @@ Page({
     total: 0,
     account: "",
     list: [{
+      inOutFormId: "1",
+      type: "",
         'applyFormId': '1',
+        'applyformId': '1',
+
         'learnToWorkId': '000',
         'reason': '无',
         'startTime': '',
@@ -25,11 +29,14 @@ Page({
         'relation': '关系',
         'carNumber': '车牌号',
         'idCard': '身份证号',
-
+        'prove':"/images/shouye.png",
         'auditState': '状态',
         'realName': '姓名'
       },
       {
+        inOutFormId: "2",
+        type: "",
+          'applyFormId': '2',
         'applyformId': '2',
         'learnToWorkId': '000',
         'reason': '无',
@@ -50,7 +57,8 @@ Page({
     ]
   },
   onLoad: function (options) {
-    this.getListInfo()
+    //调试样式 2022年9月4日10:22:58
+   this.getListInfo()
   },
   clickOpen: function (e) {
     console.log(e)

@@ -99,12 +99,13 @@ icon {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   flex: 1;
-
+  display: flex;
+  flex-direction: row;
 }
-.weui-cell__bd:before {
+/* .weui-cell__bd:before {
   content: '* ';
   color: red;
-}
+} */
 .weui-cell__ft {
   text-align: right;
   color: #999;
