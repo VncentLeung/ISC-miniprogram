@@ -41,7 +41,8 @@ Page({
    },
 
    getInfoFromStorage:function() {
-     wx.getStorage({
+     //2022年9月4日 这里改了 原本时getStorage的
+     wx.getStorageSync({
         key:'userInfo',
         success:res=> {
               console.log('getInfoFromStorage:')
@@ -69,9 +70,6 @@ Page({
    var fs = wx.getFileSystemManager();
    fs.writeFileSync(imgPath, imageData, "base64");
    fs.close();
-
-
-
    this.setData({
      localImgUrl: imgPath
    })

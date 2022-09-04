@@ -22,8 +22,11 @@
             <text class="userinfo-nickname">{{userinfo.nickName}}</text>
         </view>
     </view>
-    <button bindtap="getUserProfile" class="userLogin">
+    <button wx:if="{{!hasUserInfo}}" bindtap="getUserProfile" class="userLogin">
         授权登录
+    </button>
+    <button wx:else bindtap="getUserProfile" class="userLogin" style="color: #cccccc;">
+        登陆中...
     </button>
 </view>
 </view>

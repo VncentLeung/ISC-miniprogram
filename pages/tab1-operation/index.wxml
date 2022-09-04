@@ -1,24 +1,36 @@
-<view class="banner" >
+<!-- <view >入校申请</view> -->
+<view style="padding-left: 50rpx; text-align: left; font-size: 40rpx; color: #BBBBBB;font-weight: 200;">入校申请</view>
+
+<view class="twoContainer">
+<view class="banner-1" >
   <view class="topContainer" bindtap="inSelf">
-     <text>为自己申请入校</text>   
+     <text>本人\n入校</text>   
   </view>
 </view>
  
-<view class="banner" >
+<view class="banner-2" >
   <view class="topContainer" bindtap="inOthers">
-    <text>为他人申请入校</text>   
+    <text>他人\n入校</text>   
   </view>
 </view>
+</view>
 
-<view class="banner" >
+<view style=" padding-left: 50rpx; text-align: left; font-size: 40rpx; color: #BBBBBB;font-weight: 200;">出校申请</view>
+
+<view class="oneContainer-1">
+</view>
+<view class="banner-3" >
   <view class="topContainer" bindtap="out">
-    <text>为自己申请出校</text>   
+    <text>本人出校</text>   
   </view>
+</view>
+<text wx:if="{{staff}}" style=" padding-left: 50rpx; text-align: left; font-size: 40rpx; color: #BBBBBB;font-weight: 200;">教职工车辆信息管理</text>
+<view wx:if="{{staff}}" class="oneContainer-1">
+<view wx:if="{{staff}}" class="banner-4" >
+  <view class="topContainer" bindtap="bindCar">
+    <text>车辆信息</text>   
+  </view>
+</view>
 </view>
 
-<view wx:if="{{staff}}" class="banner" >
-  <view class="topContainer" bindtap="bindCar">
-    <text>申请绑定车辆信息</text>   
-  </view>
-</view>
 
