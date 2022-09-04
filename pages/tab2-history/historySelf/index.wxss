@@ -1,20 +1,32 @@
 /* pages/historySelf/index.wxss */
+.title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rpx 5% 5rpx 5%;
+  color: #CCCCCC;
+}
 .list-title{
   display : flex;
+  z-index: 1;
   justify-content : space-between;
   align-items: center;
   /* width: 100%; */
   height: 100rpx;
   padding: 5rpx 5rpx auto 5rpx;
-  background-color: #FFFFFF;
+  background:linear-gradient(130deg,#F5f5f5,#FFFFFF) ;
+  border-radius: 10rpx;
+  
+  box-shadow: 5rpx 5rpx 7rpx #cccccc;
 }
 .list-item{
   display : flex;
   font-size: 35rpx;
   border-style: dashed;
-  border-width: 2rpx;
+  border-width:0 0 2rpx 0;
   border-color: #DDDDDD;
-  border: none none dashed none;
+  /* border: none none dashed none; */
   color: #555555;
   /* margin-bottom: 30rpx;
   margin-top: 30rpx;
@@ -45,6 +57,7 @@
 
 }
 .one-list{
+  margin-top: 10rpx;
   border-style: solid;
   border-color: #DDDDDD;
   border-width: 2rpx;
@@ -52,6 +65,8 @@
   border-bottom-right-radius: 10rpx;
   border-top: none;
   background-color: #f5f5f5;
+  box-shadow: 5rpx 5rpx 7rpx #cccccc;
+
 }
 page{
   height: 100%;
