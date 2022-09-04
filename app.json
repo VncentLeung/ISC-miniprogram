@@ -1,9 +1,7 @@
 {
   "pages": [
 
- 
-    "pages/tab2-history/historySelf/index",
-    
+    "pages/tab2-history/historyOthers/index",
 
     "pages/selectlogin/selectlogin",
     "pages/selectlogin/scan/index",
@@ -21,7 +19,8 @@
 
 
     "pages/tab2-history/index",
-    "pages/tab2-history/historyOthers/index",
+    "pages/tab2-history/historySelf/index",
+    
 
     "pages/tab3-myspace/index",
     "pages/tab3-myspace/updatepassword/updatepassword",
