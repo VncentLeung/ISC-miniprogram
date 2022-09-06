@@ -8,16 +8,22 @@ Page({
 
     },
 
-    register: function(res){
-        wx.navigateTo({
-          url: '../register/register',
-        })
-    },
+    // register: function(res){
+    //     wx.navigateTo({
+    //       url: './register/register',
+    //     })
+    // },
 
     registerbywechat: function(res){
         wx.navigateTo({
-          url: '../registerbywechat/registerbywechat',
+          url: './registerbywechat/registerbywechat',
         })
+    },
+
+    scan: function(res){
+      wx.navigateTo({
+        url: './scan/index',
+      })
     }
    
 })

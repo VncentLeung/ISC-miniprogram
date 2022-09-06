@@ -1,13 +1,42 @@
 /* pages/historySelf/index.wxss */
+.title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rpx 5% 5rpx 5%;
+  color: #CCCCCC;
+}
 .list-title{
   display : flex;
+  z-index: 1;
   justify-content : space-between;
-  width: 100%;
+  align-items: center;
+  /* width: 100%; */
+  height: 100rpx;
+  padding: 5rpx 5rpx auto 5rpx;
+  background:linear-gradient(130deg,#F5f5f5,#FFFFFF) ;
+  border-radius: 10rpx;
+  
+  box-shadow: 5rpx 5rpx 7rpx #cccccc;
 }
 .list-item{
   display : flex;
+  font-size: 35rpx;
+  border-style: dashed;
+  border-width:0 0 2rpx 0;
+  border-color: #DDDDDD;
+  /* border: none none dashed none; */
+  color: #555555;
+  /* margin-bottom: 30rpx;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx; */
+  padding: 20rpx;
+  line-height: 100%;
   justify-content : space-between;
-  width: 100%;
+  align-items: flex-start;
+ 
 }
 
 .more {
@@ -19,4 +48,27 @@
   width: 30rpx;
   height: 30rpx;
   transform: rotate(270deg);
+}
+
+.total-list{
+  /* height: 100rpx; */
+  margin: 15rpx 20rpx 15rpx 20rpx;
+  border-radius: 10rpx;
+
+}
+.one-list{
+  margin-top: 10rpx;
+  border-style: solid;
+  border-color: #DDDDDD;
+  border-width: 2rpx;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  border-top: none;
+  background-color: #f5f5f5;
+  box-shadow: 5rpx 5rpx 7rpx #cccccc;
+
+}
+page{
+  height: 100%;
+  background-color: rgb(250, 250, 250);
 }

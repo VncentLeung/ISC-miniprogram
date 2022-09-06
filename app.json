@@ -1,30 +1,35 @@
 {
   "pages": [
-    "pages/selectlogin/selectlogin","pages/tab1-operation/index",
+
     
-    "pages/registerbywechat/registerbywechat",
-    "pages/register/register",
-    "pages/forgetpassword/forgetpassword",
-    "pages/tab3-myspace/index","pages/tab3-myspace/updatepassword/updatepassword",
-    "pages/tab3-myspace/myinformation/myinformation",
+    "pages/selectlogin/selectlogin",
+    "pages/selectlogin/scan/index",
+    "pages/selectlogin/scan/fail/fail",
+    "pages/selectlogin/register/register",
+    "pages/selectlogin/registerbywechat/registerbywechat",
+
+
+    "pages/tab1-operation/index",
+    "pages/tab1-operation/applyOut/out",    
+    "pages/tab1-operation/applyIn/in",
+    "pages/logs/logs",
+    "pages/tab1-operation/carBindInfo/index",
+    "pages/tab1-operation/carBindInfo/Bind/index",
+
+
     "pages/tab2-history/index",
     "pages/tab2-history/historySelf/index",
     "pages/tab2-history/historyOthers/index",
-    "pages/bindcar/bindcar",
+
+    "pages/tab3-myspace/index",
+    "pages/tab3-myspace/updatepassword/updatepassword",
+    "pages/tab3-myspace/myinformation/myinformation"
     
-    
-    "pages/applyOut/out",
-    "pages/applyIn/in",
-    "pages/logs/logs",
-    
-  
-    "pages/carBindInfo/index",
-    "pages/carBindInfo/Bind/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#87CEFA",
-    "navigationBarTitleText": "Intellectual Safeguard for Campus",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "贵州大学校园智能门禁",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
@@ -33,23 +38,22 @@
     "selectedColor": "#9eea6a",
     "borderStyle": "black",
     "backgroundColor": "white",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/tab1-operation/index",
-        "iconPath": "/images/unshouye.png",
-        "selectedIconPath": "/images/shouye.png",
+        "iconPath": "/images/application-0.png",
+        "selectedIconPath": "/images/application-1.png",
         "text": "申请"
       },
       {
         "pagePath": "pages/tab2-history/index",
-        "iconPath": "/images/undating.png",
-        "selectedIconPath": "/images/dating.png",
+        "iconPath": "/images/history-0.png",
+        "selectedIconPath": "/images/history-1.png",
         "text": "申请历史"
       },
       {
         "pagePath": "pages/tab3-myspace/index",
-        "iconPath": "/images/unmy.png",
-        "selectedIconPath": "/images/my.png",
+        "iconPath": "/images/myspace-0.png",
+        "selectedIconPath": "/images/myspace-1.png",
         "text": "个人中心"
       }
     ]

@@ -1,0 +1,14 @@
+/* pages/in/in.wxss */
+.page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imgfile{
+display: block; width: 160rpx; height: 160rpx;
+}
+.no-blank-tip{
+  color: red;
+}

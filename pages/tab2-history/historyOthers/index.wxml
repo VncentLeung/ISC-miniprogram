@@ -1,17 +1,17 @@
 <!--pages/historyOthers/index.wxml-->
 
-
-<view wx:for="{{list}}" wx:for-item="item" wx:key="applyFormId">
+<view class="title"> <view>提交时间</view> <view>审批状态</view> </view>
+<view  class='total-list' wx:for="{{list}}" wx:for-item="item" wx:key="applyFormId">
   <view data-id="{{item.applyFormId}}" catchtap="clickOpen" class="list-title">
-    <view wx:if="{{false}}">{{item.applyFormId}}</view>
-    <view>{{item.applyTime}}</view>
-    <view>  {{item.auditState}} 
+    <view  wx:if="{{false}}">{{item.applyFormId}}</view>
+    <view  data-id="{{item.applyFormId}}">{{item.applyTime}}</view>
+    <view  data-id="{{item.applyFormId}}" >  {{item.auditState}} 
       <image style="margin: auto 0.6rem auto auto;" wx:if="{{item.applyFormId == selected}}" class="more" src="/images/arrow.svg"></image>
       <image style="margin: auto 0.6rem auto auto;" wx:else class="less" src="/images/arrow.svg"></image>
     </view>
   </view>
 
-  <view wx:if="{{item.applyFormId== selected }}">
+  <view class='one-list' wx:if="{{item.applyFormId== selected }}">
     <view class="list-item">
       <view>入校人</view>
       <view>{{item.realName}} </view>
@@ -78,3 +78,4 @@
 
 </view>
 </view>
+<view style="padding-right: 12rpx; text-align: right; font-size: 30rpx; color: #BBBBBB;">*点击列表查看详情</view>

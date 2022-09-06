@@ -1,0 +1,33 @@
+<!--pages/carBindInfo/Bind/index.wxml-->
+
+<!-- <input type="text" name="carNum" value="{{carNum}}" placeholder="请输入完整车牌号" > -->
+<!-- <input  type="text" name="carNum" value="{{carNum}}" placeholder="请输入完整车牌号" bindinput="inputVerify" />
+  <button  bindtap="submit">申请绑定</button> -->
+
+
+
+
+<view class="page-body">
+  <form wx:if="{{operation=='add'}}" catchsubmit="formSubmit" catchreset="formReset">
+    <view class="center-class">
+      <input class="input-css" name="input" placeholder="输入申请绑定的车牌号" />
+      <view class="btn-area">
+        <button style="margin: 30rpx 5rpx;width: 300rpx;" type="primary" formType="submit">提交</button>
+        <button style="margin: 30rpx 5rpx;width: 300rpx;" formType="reset">重置</button>
+      </view>
+    </view>
+  </form>
+  <view  class="center-class" wx:else>
+    <view>
+      <input class="input-css"  name="input" value="{{carNum}}" bindinput="inputListener" disabled="{{!edit}}" />
+      <view wx:if="{{!edit}}" class="btn-area">
+        <button style="margin: 30rpx 5rpx;width: 300rpx;" type="primary" bindtap="editButton">修改</button>
+        <button style="margin: 30rpx 5rpx;width: 300rpx;" bindtap="deleteSubmitButton">删除</button>
+      </view>
+      <view wx:else class="btn-area">
+        <button style="margin: 30rpx 5rpx;width: 300rpx;" type="primary" bindtap="editSubmitButton">提交</button>
+        <button style="margin: 30rpx 5rpx;width: 300rpx;" bindtap="editCancelButton">取消</button>
+      </view>
+    </view>
+  </view>
+</view>

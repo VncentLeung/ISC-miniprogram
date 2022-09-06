@@ -1,0 +1,35 @@
+<!--pages/registerbywechat/registerbywechat.wxml-->
+<view  class="authorized-page"><image  mode="aspectFill" class='background-img' src="/images/wave.png">
+</image>
+<image mode="aspectFit" class="background-img-decoration" src="/images/bg.jpg"></image>
+<!-- <view class="title">贵州大学智能门禁</view> -->
+
+  <!-- <view class="button-1" bindtap="registerbywechat">
+     微信登录  
+  </view> -->
+  <!-- <view class="button-2" bindtap="scan">
+    <image style="height: 50rpx;width: 50rpx;" src="/images/scan.png"/>网页扫码  
+  </view> -->
+
+<view class=
+"banner-container">
+<view class="banner">
+    <view class="topContainer">
+        <view catchtap="showBcgImgArea">
+            <image class="userinfo-avatar" mode="aspectFill" src="{{userinfo.avatarUrl}}"></image>
+        </view>
+        <view>
+            <text class="userinfo-nickname">{{userinfo.nickName}}</text>
+        </view>
+    </view>
+    <button wx:if="{{!hasUserInfo}}" bindtap="getUserProfile" class="userLogin">
+        授权登录
+    </button>
+    <button wx:else bindtap="getUserProfile" class="userLogin" style="color: #cccccc;">
+        登陆中...
+    </button>
+</view>
+</view>
+  
+</view>
+

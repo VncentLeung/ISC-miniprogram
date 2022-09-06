@@ -70,16 +70,20 @@ formSubmit: function (e) {
                 ,
                 success(res){
                   if(res.data.result=='success'){
-                    wx.showToast({
-                      title: '修改成功',
-                      icon: "success",
-                    })
                     setTimeout(() => {
-                      wx.reLaunch({
-                        url: '../tab3-myspace/index',
-                      })
-                    }, 1000);
-
+                      wx.showToast({
+                        title: '提交成功',
+                        icon: "success",
+                      });
+                      setTimeout(() => {
+                        wx.hideToast();
+                      }, 2000)
+                    }, 0);
+                    setTimeout(
+                      function(){
+                        wx.navigateBack({ delta: 1 // 返回上一级页面。 
+                        })
+                    },2000)
                   
                   }
                   else

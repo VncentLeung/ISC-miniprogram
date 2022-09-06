@@ -1,0 +1,9 @@
+<!-- <button type="primary" bindtap="scan">扫码</button> -->
+<view class="center-class" wx:if="{{success}}" >
+  <view >
+  <image style="width: 300rpx;height: 400rpx;"  mode="aspectFit"  src="/images/login-success.png"></image>
+  <view style="text-align: center;">登录成功</view>
+  </view>
+  
+  
+</view >

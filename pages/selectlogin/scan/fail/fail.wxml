@@ -1,0 +1,38 @@
+<!--pages/scan/success.wxml-->
+<view wx:if="{{!success}}" class='page'>
+    <form bindsubmit='formSubmit'>
+      <view class='weui-cells'>
+        <view class='weui-cell weui-cell_input weui-cell_vcode'>
+          <view class='weui-cell__hd'>
+            <view class='weui-label'>登录用户名</view>
+          </view>
+          <view class='weui-cell__bd'>
+            <input class='weui-input' type='number' name='account' placeholder='请输入登录用户名' bindinput='inputName'/>
+          </view>
+        </view>
+      </view>
+
+      <view class='weui-cells'>
+        <view class='weui-cell weui-cell_input weui-cell_vcode'>
+          <view class='weui-cell__hd'>
+            <view class='weui-label'>登录密码</view>
+          </view>
+          <view class='weui-cell__bd'>
+            <input class='weui-input' type='password' name='password' placeholder='请输入登录密码' bindinput='inputPassword'/>
+          </view>
+        </view>
+      </view>
+
+      <view>
+        <button class='weui-btn' type='primary' formType='submit'>绑定微信</button>
+      </view>
+    </form>
+
+</view>
+<view wx:if="{{success}}">
+  <view >
+  <image style="width: 300rpx;height: 400rpx;"  mode="aspectFit"  src="/images/login-success.png"></image>
+  <view style="text-align: center;">登录成功</view>
+  </view>
+  
+</view>

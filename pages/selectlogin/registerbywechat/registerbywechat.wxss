@@ -1,0 +1,66 @@
+/* pages/registerbywechat/registerbywechat.wxss */
+/* pages/login/login.wxss */
+
+
+page{
+  height: 100%;
+}
+.banner-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.banner {
+
+    position:absolute;
+    top:60rpx;
+    border-radius: 40rpx;
+    border: none;
+    box-sizing: content-box;
+    padding: 20rpx 0;
+    width: 60%;
+    height: 370rpx;
+    margin: 20rpx auto;
+    /* background:white; */
+    /* background-image:image("../../images/cloudbg.jpg"); */
+    text-align: center;
+}
+.authorized-page{
+  height: 100%;
+}
+.background-img{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-size:100% 100%;
+  z-index: -1;
+}
+.background-img-decoration{
+  position: absolute;
+  top: 400rpx;
+  left: 200rpx;
+  height: 200rpx;
+}
+.topContainer {
+    width: 100%;
+    height: 260rpx;
+    background-size: 100%;
+    border-radius: 9px;
+}
+.userinfo-nickname {
+    color:black;
+}
+.userLogin{
+    width: 50%;
+    box-sizing: none;
+    font-size: medium;
+}
+.userinfo-avatar {
+    width: 150rpx;
+    height: 150rpx;
+    margin-bottom: 10rpx;
+    border-radius: 50%;
+}

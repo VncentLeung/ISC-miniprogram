@@ -1,16 +1,81 @@
-.banner {
-    border-radius: 10rpx;
-    border: none;
-    box-sizing: border-box;
-    padding: 20rpx 0;
-    width: 671rpx;
-    display: block;
-    height: 100rpx;
-    margin: 100rpx auto;
-    background:linear-gradient(109.6deg, rgb(204, 228, 247) 11.2%, rgb(237, 246, 250) 100.2%);
+.banner-1{
+    border-radius: 20rpx;
+    height: 250rpx;
+    /* margin: 100rpx auto; */
+    padding: 10rpx 80rpx;
+    margin-left: 40rpx;
+
+    color: white;
+    line-height: 125rpx;
+    font-size: 80rpx;
+    background:linear-gradient(60deg, #3ec1d3, #56e4f7);
     text-align: center;
+    box-shadow: 5rpx 5rpx 5rpx #cccccc;
 }
  
+.banner-2{
+  /* font-family: initial; */
+  /* font-style:initial ; */
+  border-radius: 20rpx;
+  height: 250rpx;
+  padding: 10rpx 80rpx;
+  margin-right: 40rpx;
+  /* margin: 100rpx auto; */
+  color: white;
+  line-height: 125rpx;
+  font-size: 80rpx;
+  background:linear-gradient(60deg, #52616b, #598186);
+  text-align: center;
+  box-shadow: 5rpx 5rpx 5rpx #cccccc;
+}
+.banner-3{
+  /* font-family: initial; */
+  /* font-style:initial ; */
+  font-family: serif;
+  
+  border-radius: 20rpx;
+  height: 250rpx;
+  padding: 10rpx 80rpx;
+  margin:auto 40rpx auto 40rpx;
+  /* margin: 100rpx auto; */
+  color: white;
+  line-height: 250rpx;
+  font-size: 120rpx;
+  background:linear-gradient(60deg, #ff5722, #ff8662e8);
+  text-align: center;
+  box-shadow: 5rpx 5rpx 5rpx #cccccc;
+}
+.banner-4{
+  /* font-family: initial; */
+  /* font-style:initial ; */
+  font-family: serif;
+  
+  border-radius: 20rpx;
+  height: 250rpx;
+  padding: 10rpx 80rpx;
+  margin:auto 40rpx auto 40rpx;
+  /* margin: 100rpx auto; */
+  color: white;
+  line-height: 250rpx;
+  font-size: 120rpx;
+  background:linear-gradient(60deg, #1fab89, #62d2a2);
+  text-align: center;
+  box-shadow: 5rpx 5rpx 5rpx #cccccc;
+}
+.oneContainer-1{
+  font-family: serif;
+
+}
+.twoContainer{
+  font-family: serif;
+
+  /* font-family:'FangSong_GB2312'; */
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* padding: auto 80rpx; */
+
+}
 .topContainer {
     width: 100%;
     height: 260rpx;

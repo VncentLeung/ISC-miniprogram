@@ -1,12 +1,30 @@
 <!--pages/selectlogin/selectlogin.wxml-->
-<view class="banner" >
-  <view class="topContainer" bindtap="registerbywechat">
-     <text>微信登录</text>   
+<view  class="login-page"><image  mode="aspectFill" class='background-img' src="/images/wave.png">
+</image>
+<image mode="aspectFit" class="background-img-decoration" src="/images/bg.jpg"></image>
+<view class="title">贵州大学智能门禁</view>
+<view class="button-area">
+  <view class="button-1" bindtap="registerbywechat">
+     微信登录  
+  </view>
+  <view class="button-2" bindtap="scan">
+    <image style="height: 50rpx;width: 50rpx;" src="/images/scan.png"/>网页扫码  
   </view>
 </view>
+
+  
+</view>
+<!-- <view class="banner" >
+  
+</view> -->
  
-<view class="banner" >
+<!-- <view class="banner" >
   <view class="topContainer" bindtap="register">
     <text>用户名密码登录</text>   
   </view>
-</view>
+</view> -->
+
+<!-- <view class="banner" >
+  
+</view> -->
+
