@@ -107,21 +107,24 @@ Page({
             title:'提示',
             content:'未注册或暂未绑定微信，请先尝试密码登录',
             success(res){
-              setTimeout(
-                function () {
-                  let pages = getCurrentPages(); //获取小程序页面栈
-                  let beforePage = pages[pages.length - 2]; //获取上个页面的实例对象
-                  // beforePage.setData({ //直接修改上个页面的数据（可通过这种方式直接传递参数）
-                  //   txt: '修改数据了'
-                  // })
-                  // 如果找不到go_update(),可以打印beforePage根据层级调用
-                  console.log(beforePage)
-                  beforePage.initPage();
+              wx.navigateTo({
+                url: '/pages/selectlogin/scan/fail/fail',
+              })
+              // setTimeout(
+              //   function () {
+              //     let pages = getCurrentPages(); //获取小程序页面栈
+              //     let beforePage = pages[pages.length - 2]; //获取上个页面的实例对象
+              //     // beforePage.setData({ //直接修改上个页面的数据（可通过这种方式直接传递参数）
+              //     //   txt: '修改数据了'
+              //     // })
+              //     // 如果找不到go_update(),可以打印beforePage根据层级调用
+              //     console.log(beforePage)
+              //     beforePage.initPage();
     
-                  wx.navigateBack({
-                    delta: 1 // 返回上一级页面。 
-                  })
-                }, 0)
+              //     wx.navigateBack({
+              //       delta: 1 // 返回上一级页面。 
+              //     })
+              //   }, 0)
             }
           })
 
@@ -148,10 +151,11 @@ Page({
         app.globalData.userInfo.learnToWorkId=app.globalData.learnToWorkId
 
         //可能暂时不用到_做一个用户信息setStorage存储信息
-        wx.setStorage({
-          data:app.globalData.userInfo,
-          key:'userInfo'
-        })
+        wx.setStorageSync('userInfo', app.globalData.userInfo)
+        //({
+        //   data:app.globalData.userInfo,
+        //   key:'userInfo'
+        // })
 
         console.log(app.globalData.userInfo)
         setTimeout(() => {

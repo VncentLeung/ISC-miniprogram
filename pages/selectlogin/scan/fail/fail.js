@@ -65,11 +65,24 @@ Page({
                     title: '绑定成功',
                     icon: "success",
                   });
-                  setTimeout(() => {
-                    wx.hideToast();
-                  }, 2000)
+                  // setTimeout(() => {
+                  //   wx.hideToast();
+                  // }, 2000)
                 }, 0);
-                
+                wx.navigateTo({
+                  url: '/pages/selectlogin/selectlogin',
+                })
+               }
+               else{
+                setTimeout(() => {
+                  wx.showToast({
+                    title: '请检查用户名密码',
+                    icon: "error",
+                  });
+                  // setTimeout(() => {
+                  //   wx.hideToast();
+                  // }, 2000)
+                }, 0);
                }
            }
          })

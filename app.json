@@ -1,8 +1,7 @@
 {
   "pages": [
 
-  
-
+    
     "pages/selectlogin/selectlogin",
     "pages/selectlogin/scan/index",
     "pages/selectlogin/scan/fail/fail",

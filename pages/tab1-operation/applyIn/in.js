@@ -28,26 +28,6 @@ Page({
     console.log('申请对象：' + options.person)
     this.changeView(options.person)
   },
-  // imgBase64: function (img_url) {
-  //   let res = wx.getFileSystemManager().readFileSync(img_url, 'base64')
-  //   console.log("输出base64", res.data)
-
-  //   return 'data:image/jpeg;base64,' + res.data
-  // },
-  // imgToBase64: function (img_url) {
-
-  //   wx.getFileSystemManager().readFileSync({
-  //     filePath: img_url,
-  //     encoding: "base64",
-  //     success: (res) => {
-  //       img64 = 'data:image/jpeg;base64,' + res.data
-  //       console.log(img64)
-
-
-  //     }
-  //   })
-  //   return img64;
-  // },
   bindDate1Change: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
@@ -131,7 +111,7 @@ Page({
 
   verifyForm: function (that) {
 
-    if (that.data.learnToWorkId == '' || that.data.reason == '' || that.data.startTime == '' || that.data.endTime == '' || !(that.data.prove != '' || that.data.photo != '')) {
+    if (that.data.learnToWorkId == ''  || that.data.startTime == '' || that.data.endTime == '' || !(that.data.prove != '' || that.data.photo != '')) {
       console.log(
         that.data.name + that.data.learnToWorkId + that.data.reason + that.data.startTime + that.data.endTime + that.data.prove
       )
@@ -146,7 +126,20 @@ Page({
       })
       return false
     }
-    else {
+    else if(!globalFun.checkIdCard(that.data.idCard))
+    {
+      wx: wx.showToast({
+        title: '请检查身份证格式！',
+      })
+      return false
+    }
+    else if(!globalFun.checkPhone(that.data.phone)){
+      wx: wx.showToast({
+        title: '请检查手机号格式！',
+      })
+      return false
+    }
+    else  {
       return true
     }
   },
@@ -157,8 +150,7 @@ Page({
       let formattedTime1 = globalFun.formatDate(this.data.startTime)
       let formattedTime2 = globalFun.formatDate(this.data.endTime)
       console.log('图片地址：' + this.data.prove)
-      //问题处
-      // let formattedProve= this.imgToBase64(this.data.prove)
+  
       //格式化证明
       var formattednucleicAcidProof = ''
       var formattedProve = ''
@@ -167,8 +159,6 @@ Page({
 
       if (that.data.selfOrOthersApply) {
         formattedProve = wx.getFileSystemManager().readFileSync(this.data.prove, 'base64')
-        // formattedProve = 'data:image/jpeg;base64,' + formattedProve
-        //_错误1
         console.log('_调试：formattedProve' + formattedProve)
       } else {
         formattedPhoto = wx.getFileSystemManager().readFileSync(this.data.photo, 'base64')
@@ -176,20 +166,11 @@ Page({
         // _错误1
         if (this.data.healthCode != '') {
           formattedhealthCode = wx.getFileSystemManager().readFileSync(this.data.healthCode, 'base64')
-          // 
-          // formattedhealthCode = 'data:image/jpeg;base64,' + formattedhealthCode
         }
         if (this.data.nucleicAcidProof != '') {
-
-         
-
           formattednucleicAcidProof = wx.getFileSystemManager().readFileSync(this.data.nucleicAcidProof, 'base64')
-          // formattednucleicAcidProof = 'data:image/jpeg;base64,' + formattednucleicAcidProof
         }
       }
-
-
-
       if (that.data.selfOrOthersApply)
         wx.request({
           url: app.globalData.url_11_Apply_Submit_in,

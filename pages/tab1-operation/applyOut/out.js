@@ -96,15 +96,14 @@ Page({
      return false
      }
     
-     else if(that.data.startTime>=that.data.endTime){
+     if(that.data.startTime>=that.data.endTime){
       wx:wx.showToast({
         title: '截止日期应小于起始日期',
       })
       return false
      }
-     else{
-       return true
-     }
+     else
+     return true
 
    }
 ,    formSubmit: function (e) {
@@ -220,23 +219,8 @@ Page({
         }
       })
     }
- ,
+ ,  
 
-// upLoadMedia(){
-// 	wx.request({
-//   		url: '你的接口', 
-//   		data: {
-//    			img:this.prove,//转base64后的字符串
-//   		},
-//  		 header: {
-//    		 'content-type': 'application/json' 
-//   		},
-//   		success (res) {
-//     		console.log(res.data)
-//   		}
-// 	})
-// }
-// ,
   returnindex: function(res){
       wx.switchTab({
         url: '/pages/tab1-operation/index',

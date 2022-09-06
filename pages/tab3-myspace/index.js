@@ -4,26 +4,35 @@ Page({
     data: {
       photo:'',
       imgUrl:"/images/my.png",
-      name:'获取失败'
+      name:'加载中'
     },
     onLoad(){
      this.getBaseInfo()
     },
     getBaseInfo:function () {
-      wx.getStorageSync({
-        key:'userInfo',
-        success:res=>{
-          console.log(res.data)
-          if(res.data!=null ){
-            this.setData({
-              photo:res.data.photo,
-              name:res.data.name
-            })
-            this.imageFix()
-          }
+      console.log('同步获取缓存信息')
+      var userInfo=wx.getStorageSync('userInfo')
+      console.log(userInfo)
+      console.log(userInfo.name)
+      this.setData({
+        photo:userInfo.photo,
+        name:userInfo.name
+      })
+      this.imageFix()
+      // wx.getStorageSync({
+      //   key:'userInfo',
+      //   success:res=>{
+      //     console.log(res.data)
+      //     if(res.data!=null ){
+      //       this.setData({
+      //         photo:res.data.photo,
+      //         name:res.data.name
+      //       })
             
-        }
-      }) 
+      //     }
+            
+      //   }
+      // }) 
     },
     imageFix:function(){
       var base64 = "data:image/jpg;base64," + this.data.photo;

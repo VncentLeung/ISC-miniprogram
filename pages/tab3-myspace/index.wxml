@@ -2,12 +2,12 @@
 
 <view class="info">
   <view class="photo-name">
-    <image style="width: 150rpx;" mode="aspectFit" src="{{imgUrl}}">
+    <image style="width: 150rpx;height: 150rpx; border-radius: 50%;overflow:hidden;" mode="" src="{{imgUrl}}">
     </image>
     <view>{{name}}</view>
   </view>
   <view class="infoButton" bindtap="myinformation">
-    <text>个人信息</text><image style="height: 35rpx;width: 35rpx;" src="/images/arrow.svg"></image>
+    <text>个人信息</text><image  style=" height: 35rpx;width: 35rpx;" src="/images/arrow.svg"></image>
   </view>
 </view>
 
